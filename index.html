@@ -65,6 +65,39 @@
       border: 1px solid rgba(255, 255, 255, 0.25);
       backdrop-filter: blur(12px);
     }
+.input-answer-row {
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group label {
+  font-size: 12px;
+  font-weight: 700;
+  color: #1565c0;
+  margin-bottom: 4px;
+}
+
+.input-group input {
+  border-radius: 10px;
+  padding: 8px 12px;
+  border: 2px solid #e3f2fd;
+  background: #f9fbff;
+  outline: none;
+  font-size: 13px;
+  color: var(--text-main);
+}
+
+.input-group input:focus {
+  border-color: #00a4ff;
+  box-shadow: 0 0 0 1px rgba(33,150,243,0.4);
+}
 
     /* Top bar ala KooBits */
     .top-bar {
@@ -606,18 +639,29 @@
       box-shadow: none;
     }
 
-    /* Input answer row */
+    /* Input answer (1 atau 3 kolom) */
     .input-answer-row {
       display: none;
-      gap: 8px;
-      align-items: center;
-      margin-bottom: 8px;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 10px;
     }
 
-    .input-answer-row input {
-      flex: 1;
-      border-radius: 999px;
-      padding: 9px 12px;
+    .input-group {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .input-group label {
+      font-size: 12px;
+      font-weight: 700;
+      color: #1565c0;
+    }
+
+    .input-group input {
+      border-radius: 10px;
+      padding: 8px 12px;
       border: 2px solid #e3f2fd;
       background: #f9fbff;
       outline: none;
@@ -625,12 +669,13 @@
       color: var(--text-main);
     }
 
-    .input-answer-row input:focus {
+    .input-group input:focus {
       border-color: #00a4ff;
-      box-shadow: 0 0 0 1px rgba(33, 150, 243, 0.4);
+      box-shadow: 0 0 0 1px rgba(33,150,243,0.4);
     }
 
     #checkInputBtn {
+      align-self: flex-start;
       border-radius: 999px;
       border: none;
       padding: 9px 14px;
@@ -977,24 +1022,33 @@
 
             <div class="options" id="optionsContainer"></div>
 
+            <!-- INPUT (1 atau 3 kolom) -->
             <div class="input-answer-row" id="inputContainer">
-              <input
-                type="text"
-                id="answerInput"
-                placeholder="Ketik jawabanmu di sini..."
-                autocomplete="off"
-              />
-              <button id="checkInputBtn">Check ✅</button>
+              <div class="input-group" id="group1">
+                <label id="label1">Jawaban</label>
+                <input type="text" id="input1" autocomplete="off" />
+              </div>
+              <div class="input-group" id="group2">
+                <label id="label2">Y</label>
+                <input type="text" id="input2" autocomplete="off" />
+              </div>
+              <div class="input-group" id="group3">
+                <label id="label3">Z</label>
+                <input type="text" id="input3" autocomplete="off" />
+              </div>
+
+              <button id="checkInputBtn">Cek ✅</button>
             </div>
 
             <div class="feedback-row">
               <div class="feedback" id="feedback"></div>
               <div class="bottom-actions">
-                <button class="secondary outline" id="skipBtn">Skip ⏭️</button>
-                <button class="secondary" id="nextBtn" disabled>Next Question ➜</button>
+                <button class="secondary outline" id="skipBtn">Lewati ⏭️</button>
+                <button class="secondary" id="nextBtn" disabled>Berikutnya ➜</button>
               </div>
             </div>
           </section>
+
 
           <!-- RESULT CARD -->
           <section class="result-card" id="resultCard" style="display:none;">
@@ -1114,46 +1168,175 @@
           question: "In which body system is the heart found?",
           options: ["breathing system", "circulatory system", "respiratory system", "skeletal system"],
           answerIndex: 2,
-          explanation: "Akar menyerap air dan mineral dari tanah."
+          explanation: ""
         },
+
+        {
+          type: "choice",
+          question: "Why is food kept in a refrigerator?",
+          options: ["Bacteria grow slowly and the food is kept ready to eat", "Bacteria grow slowly and the food is kept frozen", "Bacteria do not grow and the food is kept ready to eat", "Bacteria do not grow and the food is kept frozen"],
+          answerIndex: 1,
+          explanation: ""
+        },
+
+        {
+          type: "choice",
+          question: "Which of these are found in the thorax?",
+          options: ["heart and blood vessels only", "heart and lungs only", "lungs and blood vessels only", "lungs, heart and blood vessels"],
+          answerIndex: 1,
+          explanation: ""
+        },
+
+        {
+          type: "choice",
+          question: "How do micro-organisms help in bread making?",
+          options: ["They remove lumps from the flour", "They help the bread to cook at high temperatures", "They help the dough to rise", "They keep the bread float at the bottom"],
+          answerIndex: 1,
+          explanation: ""
+        },
+
         {
           type: "choice",
           question: "What is the main reason that humans need a heart?",
           options: ["to use oxygen in a chemical reaction", "to remove waste gases", "to pump blood around the body", "to ventilate the lungs"],
           answerIndex: 1,
-          explanation: "Air yang menjadi uap air disebut menguap (evaporasi)."
+          explanation: ""
         },
-{
-  type: "choice",
-  question: "Which are the correct names of the organs labelled X and Y in the diagram?",
-  image: "https://raw.githubusercontent.com/andyandriadoria/UbaidBits/main/Picture2.png",
-  options: [
-    "X: Left lung, Y: Right lung",
-    "X: Right lung, Y: Left lung",
-    "X: Heart, Y: Right lung",
-    "X: Trachea, Y: Left lung"
-  ],
-  answerIndex: 0,
-  explanation: "X is the left lung, Y is the right lung."
-},
+        {
+        type: "choice",
+        question: "Which are the correct names of the organs labelled X and Y in the diagram?",
+        image: "https://raw.githubusercontent.com/andyandriadoria/UbaidBits/main/Picture1.png",
+        options: [
+        "X: right lung; Y: heart",
+        "X: heart; Y: right lung",
+        "X: left lung; Y: heart",
+        "X: heart; Y: left lung"
+         ],
+        answerIndex: 0,
+        explanation: ""
+        },
 
         {
           type: "choice",
-          question: "Benda yang dapat ditarik paling kuat oleh magnet adalah ...",
-          options: ["Plastik", "Kertas", "Besi", "Kaca"],
+          question: "Which body system does the poster show?",
+          image: "https://raw.githubusercontent.com/andyandriadoria/UbaidBits/main/Picture2.png",
+          options: ["breathing system", "circulatory system", "excretory system", "respiratory system"],
           answerIndex: 2,
-          explanation: "Besi termasuk bahan feromagnetik yang kuat ditarik magnet."
+          explanation: ""
         },
+
         {
           type: "choice",
-          question: "Matahari terbit dari arah ... dan tenggelam di arah ...",
-          options: ["Barat - Timur", "Timur - Barat", "Utara - Selatan", "Selatan - Utara"],
-          answerIndex: 1,
-          explanation: "Matahari terbit di Timur dan tenggelam di Barat."
+          question: "Blood goes from the heart to Q to pick up oxygen. Pick one of the name Q.",
+          image: "https://raw.githubusercontent.com/andyandriadoria/UbaidBits/main/Picture2.png",
+          options: ["brain", "lungs", "mouth", "nose"],
+          answerIndex: 2,
+          explanation: ""
         },
+
+        {
+        type: "choice",
+        question: "Which waste does the blood take to Q to be removed?",
+        image: "https://raw.githubusercontent.com/andyandriadoria/UbaidBits/main/Picture2.png",
+        options: ["Air", "carbon dioxide", "oxygen", "sweat"],
+        answerIndex: 2,
+        explanation: ""
+        },
+
+        {
+        type: "choice",
+        question: "Maria is checking the pulse in her neck to measure her heart rate. In which other place could she easily check a pulse?",
+        image: "https://raw.githubusercontent.com/andyandriadoria/UbaidBits/main/Picture3.png",
+        options: ["Elbow", "Knee", "Shoulder", "wrist"],
+        answerIndex: 2,
+        explanation: ""
+        },
+
+        {
+        type: "choice",
+        question: "Maria counts for 15 seconds. She counts 20 beats. What is Maria’s heart rate in beats per minute?",
+        image: "https://raw.githubusercontent.com/andyandriadoria/UbaidBits/main/Picture3.png",
+        options: ["20", "40", "80", "300"],
+        answerIndex: 2,
+        explanation: ""
+        },
+
+        {
+        type: "choice",
+        question: "Which arrow shows the force of weight?",
+        image: "https://raw.githubusercontent.com/andyandriadoria/UbaidBits/main/Picture4.png",
+        options: ["A", "B", "C", "D"],
+        answerIndex: 2,
+        explanation: ""
+        },  
+
+        {
+        type: "choice",
+        question: "Maka is making some bread dough. Before he starts, he washes his hands. Which is the best description of why Maka washes his hands before making the dough?",
+        image: "https://raw.githubusercontent.com/andyandriadoria/UbaidBits/main/Picture8.png",
+        options: ["to stop the dough sticking to his hands", "to stop bacteria in the dough making him ill", "to stop the dough becoming too soft", "to stop bacteria from his hands going into the dough"],
+        answerIndex: 2,
+        explanation: ""
+        }, 
+
+        {
+        type: "choice",
+        question: "A student has this symbol in his notebook. Why do scientists use international symbols for electrical components?",
+        image: "https://raw.githubusercontent.com/andyandriadoria/UbaidBits/main/Picture7.png",
+        options: ["many scientists cannot read words very well", "scientists are very good at drawing things", "scientists speak and write in different languages", "many scientists fi nd spelling very diffi cult"],
+        answerIndex: 2,
+        explanation: ""
+        },
+
+        {
+        type: "choice",
+        question: "How many cells are shown in the picture?",
+        image: "https://raw.githubusercontent.com/andyandriadoria/UbaidBits/main/Picture6.png",
+        options: ["One", "Two", "Three", "Four"],
+        answerIndex: 2,
+        explanation: ""
+        },
+
+        {
+        type: "choice",
+        question: "Which of the following is not a micro-organism?",
+        options: ["Bacteria", "Earthworm", "Mould", "virus"],
+        answerIndex: 2,
+        explanation: ""
+        },
+
+        {
+        type: "choice",
+        question: "What equipment is used to look at micro-organisms?",
+        options: ["Binoculars", "Hand lens", "Microscope", "Telescope"],
+        answerIndex: 2,
+        explanation: ""
+        },
+
+        {
+        type: "choice",
+        question: "This fishing boat has a motor at the back. In which direction is the force from the motor?",
+        image: "https://raw.githubusercontent.com/andyandriadoria/UbaidBits/main/Picture5.png",
+        options: ["v", "<", "^", ">"],
+        answerIndex: 2,
+        explanation: ""
+        }, 
+
+{
+  type: "input3",
+  question: "The oxygen our body needs comes from the ( X ) The entry of this gas into our lungs is called ( Y ) When oxygen reaches the organs of our body, it is used for ( Z )",
+  image: "https://raw.githubusercontent.com/andyandriadoria/UbaidBits/main/Picture20.png",
+  correctAnswers: [
+    ["left lung", "lung kiri", "paru kiri", "paru-paru kiri"],        // untuk X
+    ["right lung", "lung kanan", "paru kanan", "paru-paru kanan"],    // untuk Y
+    ["heart", "jantung"]                                               // untuk Z
+  ],
+  explanation: "X = Left lung, Y = Right lung, Z = Heart."
+},
+
         {
           type: "input",
-          question: "Sebutkan wujud air pada suhu di atas 100°C (tulis satu kata saja)!",
+          question: "Use the words in the box to complete the sentences. Words may only be used once. ",
           correctAnswers: ["uap", "gas", "uap air"],
           explanation: "Pada suhu di atas 100°C, air berwujud gas (uap air)."
         }
@@ -1255,10 +1438,17 @@
     const answeredLabel = document.getElementById("answeredLabel");
 
     const questionText = document.getElementById("questionText");
-    const optionsContainer = document.getElementById("optionsContainer");
     const questionImageContainer = document.getElementById("questionImageContainer");
+    const optionsContainer = document.getElementById("optionsContainer");
     const inputContainer = document.getElementById("inputContainer");
-    const answerInput = document.getElementById("answerInput");
+    const input1 = document.getElementById("input1");
+    const input2 = document.getElementById("input2");
+    const input3 = document.getElementById("input3");
+    const group2 = document.getElementById("group2");
+    const group3 = document.getElementById("group3");
+    const label1 = document.getElementById("label1");
+    const label2 = document.getElementById("label2");
+    const label3 = document.getElementById("label3");
     const checkInputBtn = document.getElementById("checkInputBtn");
     const feedback = document.getElementById("feedback");
 
@@ -1278,7 +1468,7 @@
     const backToStartBtn = document.getElementById("backToStartBtn");
     const retryBtn = document.getElementById("retryBtn");
 
-    // Helper
+    // Helpers
     function shuffleArray(arr) {
       const copy = [...arr];
       for (let i = copy.length - 1; i > 0; i--) {
@@ -1351,44 +1541,44 @@
 
       quizTitle.textContent =
         currentIndex === 0
-          ? "Kerjakan soal berikut dengan teliti ya, Ubaid! 💪"
+          ? "Fokus sebentar, lalu kita rayakan skornya! 🎉"
           : "Mantap, lanjut lagi! 🚀";
     }
 
-function renderQuestion() {
-  const q = currentQuestions[currentIndex];
-  if (!q) return;
+    function renderQuestion() {
+      const q = currentQuestions[currentIndex];
+      if (!q) return;
 
-  const type = q.type || "choice";
+      const type = q.type || "choice";
 
-  isQuestionLocked = false;
-  feedback.textContent = "";
-  feedback.className = "feedback";
-  nextBtn.disabled = true;
+      isQuestionLocked = false;
+      feedback.textContent = "";
+      feedback.className = "feedback";
+      nextBtn.disabled = true;
 
-  questionText.textContent = q.question;
+      questionText.textContent = q.question;
 
-  // --- Gambar soal ---
-  if (q.image) {
-    questionImageContainer.innerHTML =
-      `<img src="${q.image}" alt="Gambar soal" />`;
-    questionImageContainer.style.display = "block";
-  } else {
-    questionImageContainer.innerHTML = "";
-    questionImageContainer.style.display = "none";
-  }
-  // -------------------
+      // Gambar soal
+      if (q.image) {
+        questionImageContainer.innerHTML =
+          '<img src="' + q.image + '" alt="Question image" />';
+        questionImageContainer.style.display = "block";
+      } else {
+        questionImageContainer.innerHTML = "";
+        questionImageContainer.style.display = "none";
+      }
 
-  optionsContainer.innerHTML = "";
-  optionsContainer.style.display = "none";
-  inputContainer.style.display = "none";
+      // reset containers
+      optionsContainer.innerHTML = "";
+      optionsContainer.style.display = "none";
+      inputContainer.style.display = "none";
 
-  if (type === "choice") {
-    renderChoiceQuestion(q);
-  } else if (type === "input") {
-    renderInputQuestion(q);
-  }
-}
+      if (type === "choice") {
+        renderChoiceQuestion(q);
+      } else if (type === "input" || type === "input3") {
+        renderInputQuestion(q);
+      }
+    }
 
     function renderChoiceQuestion(q) {
       optionsContainer.style.display = "flex";
@@ -1407,12 +1597,32 @@ function renderQuestion() {
       });
     }
 
-    function renderInputQuestion() {
+    function renderInputQuestion(q) {
       inputContainer.style.display = "flex";
-      answerInput.value = "";
-      answerInput.disabled = false;
+
+      const isTriple = q.type === "input3";
+
+      // label (bisa custom via q.labels)
+      const labels = q.labels || (isTriple ? ["X", "Y", "Z"] : ["Jawaban", "Y", "Z"]);
+      label1.textContent = labels[0] || (isTriple ? "X" : "Jawaban");
+      label2.textContent = labels[1] || "Y";
+      label3.textContent = labels[2] || "Z";
+
+      // show/hide kolom
+      group2.style.display = isTriple ? "flex" : "none";
+      group3.style.display = isTriple ? "flex" : "none";
+
+      // reset nilai
+      input1.value = "";
+      input2.value = "";
+      input3.value = "";
+
+      input1.disabled = false;
+      input2.disabled = false;
+      input3.disabled = false;
       checkInputBtn.disabled = false;
-      answerInput.focus();
+
+      input1.focus();
     }
 
     function handleOptionClick(selectedIndex) {
@@ -1461,18 +1671,27 @@ function renderQuestion() {
 
     function handleInputSubmit() {
       if (isQuestionLocked) return;
-
       const q = currentQuestions[currentIndex];
-      if ((q.type || "choice") !== "input") return;
+      if (!q) return;
 
-      let userAnswer = answerInput.value.trim();
+      if (q.type === "input3") {
+        handleInput3Submit(q);
+      } else {
+        handleSingleInput(q);
+      }
+    }
+
+    function normalize(str) {
+      return str.toString().trim().toLowerCase();
+    }
+
+    function handleSingleInput(q) {
+      let userAnswer = input1.value.trim();
       if (!userAnswer) {
         feedback.textContent = "Tulis dulu jawabannya, ya 😊";
         feedback.className = "feedback wrong";
         return;
       }
-
-      const normalize = (str) => str.toString().trim().toLowerCase();
 
       const normalizedUser = normalize(userAnswer);
       let correctAnswers = [];
@@ -1493,7 +1712,9 @@ function renderQuestion() {
       isQuestionLocked = true;
       answeredCount++;
 
-      answerInput.disabled = true;
+      input1.disabled = true;
+      input2.disabled = true;
+      input3.disabled = true;
       checkInputBtn.disabled = true;
 
       if (isCorrect) {
@@ -1508,6 +1729,53 @@ function renderQuestion() {
           "Belum tepat. " +
           (correctShow ? "Jawaban benar: " + correctShow + ". " : "") +
           (q.explanation || "");
+        feedback.className = "feedback wrong";
+      }
+
+      updateProgress();
+      nextBtn.disabled = false;
+      nextBtn.textContent =
+        currentIndex === currentQuestions.length - 1
+          ? "Lihat Hasil 🏁"
+          : "Berikutnya ➜";
+    }
+
+    function handleInput3Submit(q) {
+      const a1 = normalize(input1.value);
+      const a2 = normalize(input2.value);
+      const a3 = normalize(input3.value);
+
+      if (!a1 || !a2 || !a3) {
+        feedback.textContent = "Semua kolom X, Y, dan Z harus diisi ya 😊";
+        feedback.className = "feedback wrong";
+        return;
+      }
+
+      function isCorrectInput(user, validList) {
+        return validList.some((v) => normalize(v) === user);
+      }
+
+      const correct1 = isCorrectInput(a1, q.correctAnswers[0]);
+      const correct2 = isCorrectInput(a2, q.correctAnswers[1]);
+      const correct3 = isCorrectInput(a3, q.correctAnswers[2]);
+
+      isQuestionLocked = true;
+      answeredCount++;
+
+      input1.disabled = true;
+      input2.disabled = true;
+      input3.disabled = true;
+      checkInputBtn.disabled = true;
+
+      if (correct1 && correct2 && correct3) {
+        score += 10;
+        scoreDisplay.textContent = score;
+        topScore.textContent = score + " XP";
+        feedback.textContent = "Benar! " + (q.explanation || "");
+        feedback.className = "feedback correct";
+      } else {
+        feedback.textContent =
+          "Belum tepat. " + (q.explanation || "");
         feedback.className = "feedback wrong";
       }
 
@@ -1566,14 +1834,14 @@ function renderQuestion() {
 
       if (percent === 100) {
         emojiResult.textContent = "🌟";
-        resultTitle.textContent = "Perfect! Juara banget, Ubaid! 🔥";
+        resultTitle.textContent = "Perfect! Math & Science Hero! 🔥";
         resultMessage.textContent =
           "Semua soal benar! Ulangi atau naikkan jumlah soalnya untuk tantangan baru.";
       } else if (percent >= 80) {
         emojiResult.textContent = "🏆";
-        resultTitle.textContent = "Keren! Tinggal sedikit lagi! 💪";
+        resultTitle.textContent = "Keren banget! 💪";
         resultMessage.textContent =
-          "Nilaimu sudah tinggi. Coba cari tahu soal-soal yang masih salah, ya.";
+          "Nilaimu sudah tinggi. Coba cek lagi soal-soal yang masih salah, ya.";
       } else if (percent >= 50) {
         emojiResult.textContent = "🚀";
         resultTitle.textContent = "Lumayan, kita push lagi!";
@@ -1581,7 +1849,7 @@ function renderQuestion() {
           "Belajar itu pelan-pelan tapi rutin. Ulangi sesi ini supaya makin kuat.";
       } else {
         emojiResult.textContent = "🌱";
-        resultTitle.textContent = "Ayo kita mulai dari dasar lagi 😉";
+        resultTitle.textContent = "Awal yang bagus untuk mulai! 🙂";
         resultMessage.textContent =
           "Tidak apa-apa kalau masih banyak salah. Kita bisa mulai dari materi mudah dulu.";
       }
@@ -1626,11 +1894,14 @@ function renderQuestion() {
     backToStartBtn.addEventListener("click", resetToStart);
     retryBtn.addEventListener("click", retrySameQuiz);
     checkInputBtn.addEventListener("click", handleInputSubmit);
-    answerInput.addEventListener("keydown", (e) => {
-      if (e.key === "Enter") {
-        e.preventDefault();
-        handleInputSubmit();
-      }
+
+    [input1, input2, input3].forEach((el) => {
+      el.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+          e.preventDefault();
+          handleInputSubmit();
+        }
+      });
     });
   </script>
 </body>
