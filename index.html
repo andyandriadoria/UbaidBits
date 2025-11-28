@@ -941,8 +941,8 @@
         <!-- HERO -->
         <section class="hero-daily">
           <div class="hero-text">
-            <h1>Examination Primary Level</h1>
-            <p>Special practice for Ubaid before the First Semester Final Exam.</p>
+            <h1>Pearson Mock Year 6</h1>
+            <p>Special practice for Ubaid before Pearson Mock Test I.</p>
             <div class="hero-meta">
               Select the subject & number of questions below, then press
               <strong>Start</strong>.
@@ -965,7 +965,7 @@
               <option value="mix">Mix</option>
               <option value="math">Math</option>
               <option value="science">Science</option>
-              <option value="indo">Bahasa Indo</option>
+              <option value="english">English</option>
             </select>
           </div>
 
@@ -1116,51 +1116,686 @@
       math: [
         {
           type: "choice",
-          question: "Hasil dari 3/4 + 2/4 adalah ...",
-          options: ["4/4", "5/4", "6/4", "1/4"],
+          question: "Pick the prime number",
+          options: ["4", "7", "8", "9"],
           answerIndex: 1,
-          explanation: "3/4 + 2/4 = (3+2)/4 = 5/4."
+          explanation: "Bilangan prima adalah bilangan yang hanya bisa dibagi 1 dan dirinya sendiri"
         },
         {
           type: "choice",
-          question: "Sebuah persegi mempunyai sisi 8 cm. Keliling persegi adalah ...",
-          options: ["16 cm", "24 cm", "32 cm", "64 cm"],
-          answerIndex: 2,
-          explanation: "Keliling persegi = 4 × sisi = 4 × 8 = 32 cm."
-        },
-        {
-          type: "choice",
-          question: "Bilangan prima berikut yang merupakan bilangan prima terbesar kurang dari 20 adalah ...",
-          options: ["17", "18", "19", "20"],
-          answerIndex: 2,
-          explanation: "Bilangan prima kurang dari 20 adalah 2,3,5,7,11,13,17,19. Yang terbesar adalah 19."
-        },
-        {
-          type: "choice",
-          question: "Hasil dari 25 × 4 : 5 adalah ...",
-          options: ["5", "10", "15", "20"],
-          answerIndex: 3,
-          explanation: "25 × 4 = 100, lalu 100 : 5 = 20. Jadi jawabannya 20."
-        },
-        {
-          type: "choice",
-          question: "Pecahan yang senilai dengan 2/3 adalah ...",
-          options: ["4/9", "6/9", "8/15", "10/18"],
+          question: "Which shape has one pair of parallel sides?",
+          options: ["Square", "Trapezium", "Rhombus", "Triangle"],
           answerIndex: 1,
-          explanation: "2/3 = (2×3)/(3×3) = 6/9, jadi 6/9 senilai dengan 2/3."
+          explanation: ""
         },
         {
           type: "input",
-          question: "Hasil dari 250 : 5 adalah ...",
-          correctAnswers: ["50"],
-          explanation: "250 dibagi 5 = 50."
+          question: "Area of triangle with base 10 cm and height 6 cm = .... cm²",
+          correctAnswers: ["30"],
+          explanation: "Rumus luas segitiga: 1/2 x alas x tinggi. Diketahui: Alas = 10 cm, Tinggi = 6 cm. Hitung: 1/2 x 10 x 6 = 30"
         },
         {
           type: "input",
-          question: "Sebuah persegi panjang memiliki panjang 12 cm dan lebar 5 cm. Luasnya adalah ... cm²",
-          correctAnswers: ["60", "60 cm2", "60 cm²"],
-          explanation: "Luas = p × l = 12 × 5 = 60 cm²."
+          question: "Perimeter of rectangle 6 cm x 4 cm = .... cm",
+          correctAnswers: ["20"],
+          explanation: "Rumus keliling persegi panjang: 2 x (panjang + lebar). 2 x (6+4) = 2 x 10 = 20"
+        },
+        {
+          type: "input",
+          question: "1,5 km = .... m",
+          correctAnswers: ["1500", "1.500"],
+          explanation: "Konversi kilometer ke meter: 1 km = 1000 m. Maka: 1,5 km = 1,5 x 1000 = 1500 m"
+        },
+        {
+          type: "input",
+          question: "Find the value of 4(2b + 3) when b=5",
+          correctAnswers: ["52"],
+          explanation: "Hitung bagian dalam kurung: 2(5) + 3 = 10 + 3 = 13. Kalikan dengan 4: 4 x 13 = 52"
+        },
+        {
+          type: "input",
+          question: "Convert 1 hour 15 minutes = .... minutes",
+          correctAnswers: ["75"],
+          explanation: ""
+        },
+        {
+          type: "input",
+          question: "A square has a side of 9cm. Its area = .... cm²",
+          correctAnswers: ["81"],
+          explanation: "Rumus luas persegi: sisi x sisi = 9 x 9 = 81"
+        },
+        {
+          type: "input",
+          question: "Radius = 7 cm. Diameter = .... cm",
+          correctAnswers: ["14"],
+          explanation: "Diameter = 2 x jari-jari (radius) = 2 x 7 = 14"
+        },  
+        {
+          type: "input",
+          question: "Mean of 4, 8, 6, 10 = ....",
+          correctAnswers: ["7"],
+          explanation: "Untuk mencari mean (rata-rata) dari 4, 8, 6, 10. Jumlahkan semua angkanya: 4 + 8 + 6 + 10 = 28. Bagi dengan jumlah data (4 angka): 28 ÷ 4 = 7"
+        }, 
+        {
+          type: "input",
+          question: "Range of 12, 5, 8, 11 = ....",
+          correctAnswers: ["7"],
+          explanation: "Untuk mencari range, gunakan rumus: range = nilai terbesar - nilai terkecil = 12 - 5 = 7"
+        },     
+        {
+          type: "input",
+          question: "Round 3.726",
+          correctAnswers: ["3.800", "3800", "3,800"],
+          explanation: ""
+        },
+        {
+          type: "input",
+          question: "Increase 100 by 25% =",
+          correctAnswers: ["125"],
+          explanation: "Cari 25% dari 100, 25% x 100 = 25. Tambahkan ke 100, 100 + 25 = 125"
+        },
+        {
+          type: "input",
+          question: "Ubaid spends 2/5 of his pocket money on snacks. How much is left?",
+          correctAnswers: ["3/5"],
+          explanation: "Ubaid menghabiskan 2/5 dari uang sakunya untuk membeli snack. Berapa bagian yang tersisa? Total uang saku = 1 (utuh). Bagian yang dipakai = 2/5. jadi yang tersisa 1 - 2/5 = 5/5 - 2/5 = 3/5"
+        }, 
+        {
+          type: "input",
+          question: "Convert 4/10 to a decimal",
+          correctAnswers: ["0,4", "0.4"],
+          explanation: "4 ÷ 10 = 0,4"
+        },              
+        {
+          type: "input",
+          question: "Find 50% of 240 =",
+          correctAnswers: ["120"],
+          explanation: ""
+        },
+        {
+          type: "input",
+          question: "0,6 as a fraction",
+          correctAnswers: ["6/10", "3/5"],
+          explanation: ""
+        },
+        {
+          type: "input",
+          question: "The next two term in this pattern : 3, 6, 12, 24, ... , ...",
+          correctAnswers: ["48, 96", "48,96"],
+          explanation: ""
+        },
+        {
+          type: "input",
+          question: "2/3 x 3/5 = ... ",
+          correctAnswers: ["6/15", "2/5"],
+          explanation: "Kalikan pecahan dengan mengalikan pembilang dan penyebut"
+        },        
+        {
+          type: "input",
+          question: "3/4 + 1/8 = ... ",
+          correctAnswers: ["7/8"],
+          explanation: ""
+        },
+        {
+          type: "input",
+          question: "Simplify 6/9",
+          correctAnswers: ["2/3"],
+          explanation: "Faktor persekutuan terbesar dari 6 dan 9 adalah 3. 6 ÷ 3 = 2, 9 ÷ 3 = 3 jadi 6/9 = 2/3"
+        },
+        {
+          type: "input",
+          question: "Write all factors of 20",
+          correctAnswers: ["1, 2, 4, 5, 10, 20", "1,2,4,5,10,20"],
+          explanation: "Faktor adalah bilangan yang dapat membagi suatu bilangan tanpa sisa"
+        },
+        {
+          type: "input",
+          question: "720 : 8 = .....",
+          correctAnswers: ["90"],
+          explanation: ""
+        },
+        {
+          type: "input",
+          question: "900 - 475 = .....",
+          correctAnswers: ["425"],
+          explanation: ""
+        }, 
+        {
+          type: "input",
+          question: "36 x 7 = .....",
+          correctAnswers: ["252"],
+          explanation: ""
+        },
+        {
+  type: "input",
+  question: "Perimeter of rectangle 7 cm x 3 cm = .... cm",
+  correctAnswers: ["20"],
+  explanation: "Keliling = 2 × (panjang + lebar)"
+},
+{
+  type: "input",
+  question: "Perimeter of rectangle 10 cm x 4 cm = .... cm",
+  correctAnswers: ["28"],
+  explanation: "Keliling = 2 × (panjang + lebar)"
+},
+{
+  type: "input",
+  question: "Perimeter of rectangle 5 cm x 9 cm = .... cm",
+  correctAnswers: ["28"],
+  explanation: "Keliling = 2 × (panjang + lebar)"
+},
+{
+  type: "input",
+  question: "Perimeter of rectangle 12 cm x 6 cm = .... cm",
+  correctAnswers: ["36"],
+  explanation: "Keliling = 2 × (panjang + lebar)"
+},
+{
+  type: "input",
+  question: "2 km = .... m",
+  correctAnswers: ["2000"],
+  explanation: "1 km = 1000 meter"
+},
+{
+  type: "input",
+  question: "0.8 km = .... m",
+  correctAnswers: ["800"],
+  explanation: "Kalikan km × 1000"
+},
+{
+  type: "input",
+  question: "1.2 km = .... m",
+  correctAnswers: ["1200"],
+  explanation: "Kalikan km × 1000"
+},
+{
+  type: "input",
+  question: "3.5 km = .... m",
+  correctAnswers: ["3500"],
+  explanation: "Kalikan km × 1000"
+},
+{
+  type: "input",
+  question: "Find the value of 4(2b + 3) when b=3",
+  correctAnswers: ["36"],
+  explanation: "Substitusikan nilai b lalu hitung"
+},
+{
+  type: "input",
+  question: "Find the value of 4(2b + 5) when b=4",
+  correctAnswers: ["52"],
+  explanation: "Substitusikan nilai b lalu hitung"
+},
+{
+  type: "input",
+  question: "Find the value of 5(3b + 2) when b=2",
+  correctAnswers: ["40"],
+  explanation: "Substitusikan nilai b lalu hitung"
+},
+{
+  type: "input",
+  question: "Find the value of 6(b + 4) when b=3",
+  correctAnswers: ["42"],
+  explanation: "Substitusikan nilai b lalu hitung"
+},
+{
+  type: "input",
+  question: "Convert 1 hour 20 minutes = .... minutes",
+  correctAnswers: ["80"],
+  explanation: "1 jam = 60 menit"
+},
+{
+  type: "input",
+  question: "Convert 2 hours 15 minutes = .... minutes",
+  correctAnswers: ["135"],
+  explanation: "Jam × 60 lalu tambah menit"
+},
+{
+  type: "input",
+  question: "Convert 3 hours 5 minutes = .... minutes",
+  correctAnswers: ["185"],
+  explanation: "Jam × 60 lalu tambah menit"
+},
+{
+  type: "input",
+  question: "Convert 0 hours 45 minutes = .... minutes",
+  correctAnswers: ["45"],
+  explanation: "0 × 60 + 45"
+},
+{
+  type: "input",
+  question: "A square has side 5 cm. Its area = .... cm²",
+  correctAnswers: ["25"],
+  explanation: "Luas = sisi × sisi"
+},
+{
+  type: "input",
+  question: "A square has side 11 cm. Its area = .... cm²",
+  correctAnswers: ["121"],
+  explanation: "Luas = sisi × sisi"
+},
+{
+  type: "input",
+  question: "A square has side 4 cm. Its area = .... cm²",
+  correctAnswers: ["16"],
+  explanation: "Luas = sisi × sisi"
+},
+{
+  type: "input",
+  question: "A square has side 15 cm. Its area = .... cm²",
+  correctAnswers: ["225"],
+  explanation: "Luas = sisi × sisi"
+},
+{
+  type: "input",
+  question: "Radius = 5 cm. Diameter = .... cm",
+  correctAnswers: ["10"],
+  explanation: "Diameter = 2 × radius"
+},
+{
+  type: "input",
+  question: "Radius = 9 cm. Diameter = .... cm",
+  correctAnswers: ["18"],
+  explanation: "Diameter = 2 × radius"
+},
+{
+  type: "input",
+  question: "Radius = 12 cm. Diameter = .... cm",
+  correctAnswers: ["24"],
+  explanation: "Diameter = 2 × radius"
+},
+{
+  type: "input",
+  question: "Radius = 3 cm. Diameter = .... cm",
+  correctAnswers: ["6"],
+  explanation: "Diameter = 2 × radius"
+},
+{
+  type: "input",
+  question: "Mean of 6, 8, 10, 6 = ....",
+  correctAnswers: ["7.5"],
+  explanation: "Jumlahkan semua lalu bagi banyak data"
+},
+{
+  type: "input",
+  question: "Mean of 3, 9, 12, 6 = ....",
+  correctAnswers: ["7.5"],
+  explanation: "Jumlahkan semua lalu bagi banyak data"
+},
+{
+  type: "input",
+  question: "Mean of 5, 7, 9, 11 = ....",
+  correctAnswers: ["8"],
+  explanation: "Jumlahkan semua lalu bagi banyak data"
+},
+{
+  type: "input",
+  question: "Mean of 2, 4, 6, 8 = ....",
+  correctAnswers: ["5"],
+  explanation: "Jumlahkan semua lalu bagi banyak data"
+},
+{
+  type: "input",
+  question: "Range of 10, 3, 7, 2 = ....",
+  correctAnswers: ["8"],
+  explanation: "Range = terbesar - terkecil"
+},
+{
+  type: "input",
+  question: "Range of 15, 9, 12, 6 = ....",
+  correctAnswers: ["9"],
+  explanation: "Range = terbesar - terkecil"
+},
+{
+  type: "input",
+  question: "Range of 20, 5, 8, 11 = ....",
+  correctAnswers: ["15"],
+  explanation: "Range = terbesar - terkecil"
+},
+{
+  type: "input",
+  question: "Range of 18, 14, 3, 9 = ....",
+  correctAnswers: ["15"],
+  explanation: "Range = terbesar - terkecil"
+},
+{
+  type: "input",
+  question: "Round 5.382 to the nearest hundred",
+  correctAnswers: ["5.400", "5400", "5,400"],
+  explanation: ""
+},
+{
+  type: "input",
+  question: "Round 7.629 to the nearest hundred",
+  correctAnswers: ["7.600", "7600"],
+  explanation: ""
+},
+{
+  type: "input",
+  question: "Round 2.120 to the nearest hundred",
+  correctAnswers: ["2.000", "2000"],
+  explanation: ""
+},
+{
+  type: "input",
+  question: "Round 4.510 to the nearest hundred",
+  correctAnswers: ["4500", "4.500"],
+  explanation: ""
+},
+{
+  type: "input",
+  question: "Ubaid spends 1/4 of his pocket money. How much is left?",
+  correctAnswers: ["3/4"],
+  explanation: "1 - 1/4 = 3/4"
+},
+{
+  type: "input",
+  question: "Ubaid spends 3/8 of his money. How much is left?",
+  correctAnswers: ["5/8"],
+  explanation: "1 - 3/8 = 5/8"
+},
+{
+  type: "input",
+  question: "Ubaid spends 1/2 of his money. How much is left?",
+  correctAnswers: ["1/2"],
+  explanation: "1 - 1/2 = 1/2"
+},
+{
+  type: "input",
+  question: "Ubaid spends 2/7 of his money. How much is left?",
+  correctAnswers: ["5/7"],
+  explanation: "1 - 2/7 = 5/7"
+},
+{
+  type: "input",
+  question: "Convert 2/10 to a decimal",
+  correctAnswers: ["0.2"],
+  explanation: "Pembilang ÷ penyebut"
+},
+{
+  type: "input",
+  question: "Convert 8/10 to a decimal",
+  correctAnswers: ["0.8"],
+  explanation: "Pembilang ÷ penyebut"
+},
+{
+  type: "input",
+  question: "Convert 9/10 to a decimal",
+  correctAnswers: ["0.0"],
+  explanation: "Pembilang ÷ penyebut"
+},
+{
+  type: "input",
+  question: "Convert 7/10 to a decimal",
+  correctAnswers: ["0.7"],
+  explanation: "Pembilang ÷ penyebut"
+},
+{
+  type: "input",
+  question: "Find 50% of 300",
+  correctAnswers: ["150"],
+  explanation: "50% adalah setengah"
+},
+{
+  type: "input",
+  question: "Find 50% of 120",
+  correctAnswers: ["60"],
+  explanation: "50% adalah setengah"
+},
+{
+  type: "input",
+  question: "Find 50% of 80",
+  correctAnswers: ["40"],
+  explanation: "50% adalah setengah"
+},
+{
+  type: "input",
+  question: "Find 50% of 500",
+  correctAnswers: ["250"],
+  explanation: "50% adalah setengah"
+},
+{
+  type: "input",
+  question: "0.8 as a fraction = ....",
+  correctAnswers: ["8/10"],
+  explanation: ""
+},
+{
+  type: "input",
+  question: "0.4 as a fraction = ....",
+  correctAnswers: ["4/10"],
+  explanation: ""
+},
+{
+  type: "input",
+  question: "0.2 as a fraction = ....",
+  correctAnswers: ["2/10"],
+  explanation: ""
+},
+{
+  type: "input",
+  question: "The next two terms in this pattern: 2, 4, 8, 16, ... , ...",
+  correctAnswers: ["32", "64"],
+  explanation: "Dikalikan 2 setiap langkah"
+},
+{
+  type: "input",
+  question: "The next two terms: 5, 10, 20, 40, ... , ...",
+  correctAnswers: ["80", "160"],
+  explanation: "Dikalikan 2 setiap langkah"
+},
+{
+  type: "input",
+  question: "The next two terms: 1, 3, 9, 27, ... , ...",
+  correctAnswers: ["81", "243"],
+  explanation: "Dikalikan 3 setiap langkah"
+},
+{
+  type: "input",
+  question: "The next two terms: 4, 8, 16, 32, ... , ...",
+  correctAnswers: ["64", "128"],
+  explanation: "Dikalikan 2 setiap langkah"
+},
+{
+  type: "input",
+  question: "2/3 × 4/5 = ...",
+  correctAnswers: ["8/15"],
+  explanation: "Kalikan pembilang dan penyebut"
+},
+{
+  type: "input",
+  question: "3/4 × 2/7 = ...",
+  correctAnswers: ["6/28", "3/14"],
+  explanation: "Kalikan pembilang dan penyebut lalu sederhanakan"
+},
+{
+  type: "input",
+  question: "5/6 × 1/3 = ...",
+  correctAnswers: ["5/18"],
+  explanation: "Kalikan pembilang dan penyebut"
+},
+{
+  type: "input",
+  question: "7/8 × 2/5 = ...",
+  correctAnswers: ["14/40", "7/20"],
+  explanation: "Sederhanakan jika perlu"
+},
+{
+  type: "input",
+  question: "3/4 + 1/6 = ...",
+  correctAnswers: ["11/12"],
+  explanation: "Samakan penyebut"
+},
+{
+  type: "input",
+  question: "1/2 + 1/8 = ...",
+  correctAnswers: ["5/8"],
+  explanation: "Samakan penyebut"
+},
+{
+  type: "input",
+  question: "2/5 + 1/10 = ...",
+  correctAnswers: ["5/10", "1/2"],
+  explanation: "Samakan penyebut"
+},
+{
+  type: "input",
+  question: "5/6 + 1/3 = ...",
+  correctAnswers: ["7/6", "1 1/6"],
+  explanation: "Samakan penyebut"
+},
+{
+  type: "input",
+  question: "Simplify 8/12",
+  correctAnswers: ["2/3"],
+  explanation: "Bagi pembilang dan penyebut dengan FPB"
+},
+{
+  type: "input",
+  question: "Simplify 9/15",
+  correctAnswers: ["3/5"],
+  explanation: "Bagi pembilang dan penyebut dengan FPB"
+},
+{
+  type: "input",
+  question: "Simplify 12/20",
+  correctAnswers: ["3/5"],
+  explanation: "Bagi pembilang dan penyebut dengan FPB"
+},
+{
+  type: "input",
+  question: "Simplify 14/21",
+  correctAnswers: ["2/3"],
+  explanation: "Bagi pembilang dan penyebut dengan FPB"
+},
+{
+  type: "input",
+  question: "Write all factors of 18",
+  correctAnswers: ["1,2,3,6,9,18"],
+  explanation: "Bilangan yang membagi habis 18"
+},
+{
+  type: "input",
+  question: "Write all factors of 12",
+  correctAnswers: ["1,2,3,4,6,12"],
+  explanation: "Bilangan yang membagi habis 12"
+},
+{
+  type: "input",
+  question: "Write all factors of 16",
+  correctAnswers: ["1,2,4,8,16"],
+  explanation: "Bilangan yang membagi habis 16"
+},
+{
+  type: "input",
+  question: "Write all factors of 24",
+  correctAnswers: ["1,2,3,4,6,8,12,24"],
+  explanation: "Bilangan yang membagi habis 24"
+},
+{
+  type: "input",
+  question: "720 : 6 = .....",
+  correctAnswers: ["120"],
+  explanation: "720 dibagi 6"
+},
+{
+  type: "input",
+  question: "800 : 8 = .....",
+  correctAnswers: ["100"],
+  explanation: "800 dibagi 8"
+},
+{
+  type: "input",
+  question: "450 : 9 = .....",
+  correctAnswers: ["50"],
+  explanation: "450 dibagi 9"
+},
+{
+  type: "input",
+  question: "600 : 4 = .....",
+  correctAnswers: ["150"],
+  explanation: "600 dibagi 4"
+},
+{
+  type: "input",
+  question: "900 - 350 = .....",
+  correctAnswers: ["550"],
+  explanation: "Kurangkan"
+},
+{
+  type: "input",
+  question: "700 - 275 = .....",
+  correctAnswers: ["425"],
+  explanation: "Kurangkan"
+},
+{
+  type: "input",
+  question: "650 - 180 = .....",
+  correctAnswers: ["470"],
+  explanation: "Kurangkan"
+},
+{
+  type: "input",
+  question: "1200 - 725 = .....",
+  correctAnswers: ["475"],
+  explanation: "Kurangkan"
+},
+{
+  type: "input",
+  question: "36 × 5 = .....",
+  correctAnswers: ["180"],
+  explanation: "Perkalian"
+},
+{
+  type: "input",
+  question: "24 × 7 = .....",
+  correctAnswers: ["168"],
+  explanation: "Perkalian"
+},
+{
+  type: "input",
+  question: "15 × 9 = .....",
+  correctAnswers: ["135"],
+  explanation: "Perkalian"
+},
+{
+  type: "input",
+  question: "48 × 6 = .....",
+  correctAnswers: ["288"],
+  explanation: "Perkalian"
+},
+        {
+  type: "input",
+  question: "Area of triangle with base 8 cm and height 5 cm = .... cm²",
+  correctAnswers: ["20"],
+  explanation: "Luas = 1/2 × alas × tinggi"
+},
+{
+  type: "input",
+  question: "Area of triangle with base 12 cm and height 7 cm = .... cm²",
+  correctAnswers: ["42"],
+  explanation: "Luas = 1/2 × alas × tinggi"
+},
+{
+  type: "input",
+  question: "Area of triangle with base 9 cm and height 10 cm = .... cm²",
+  correctAnswers: ["45"],
+  explanation: "Luas = 1/2 × alas × tinggi"
+},
+{
+  type: "input",
+  question: "Area of triangle with base 14 cm and height 6 cm = .... cm²",
+  correctAnswers: ["42"],
+  explanation: "Luas = 1/2 × alas × tinggi"
+},
+               
+        {
+          type: "input",
+          question: "631 + 428 = .....",
+          correctAnswers: ["1.059", "1059", "1,059"],
+          explanation: ""
         }
+        
       ],
       science: [
         {
@@ -1341,63 +1976,337 @@
           explanation: "Pada suhu di atas 100°C, air berwujud gas (uap air)."
         }
       ],
-      indo: [
-        {
-          type: "choice",
-          question: "Kalimat berikut yang menggunakan tanda baca koma dengan benar adalah ...",
-          options: [
-            "Ibu membeli apel, jeruk dan mangga.",
-            "Ibu membeli apel jeruk, dan mangga.",
-            "Ibu membeli apel, jeruk, dan mangga.",
-            "Ibu, membeli apel jeruk dan mangga."
-          ],
-          answerIndex: 2,
-          explanation: "Pada deret, tanda koma dipakai di antara unsur-unsur seperti 'apel, jeruk, dan mangga'."
-        },
-        {
-          type: "choice",
-          question: "Antonim dari kata 'tinggi' adalah ...",
-          options: ["Panjang", "Kuat", "Rendah", "Lurus"],
-          answerIndex: 2,
-          explanation: "Lawan kata 'tinggi' adalah 'rendah'."
-        },
-        {
-          type: "choice",
-          question: "Kalimat yang menggunakan huruf kapital dengan benar adalah ...",
-          options: [
-            "Kami berlibur ke kota bandung.",
-            "Ayah bekerja di Bank mandiri.",
-            "Pada hari Minggu kami ke pantai.",
-            "Dia tinggal di jalan melati."
-          ],
-          answerIndex: 2,
-          explanation: "Nama hari ditulis dengan huruf kapital: 'hari Minggu'."
-        },
-        {
-          type: "choice",
-          question: "Kalimat perintah yang benar adalah ...",
-          options: [
-            "Bolehkah saya ikut?",
-            "Tolong tutup pintunya!",
-            "Saya ingin makan sekarang.",
-            "Dia sedang belajar."
-          ],
-          answerIndex: 1,
-          explanation: "Kalimat perintah biasanya memakai kata kerja perintah, contoh: 'Tolong tutup pintunya!'"
-        },
-        {
-          type: "choice",
-          question: "Kata tanya yang tepat untuk menanyakan 'alasan' adalah ...",
-          options: ["Apa", "Siapa", "Di mana", "Mengapa"],
-          answerIndex: 3,
-          explanation: "Untuk menanyakan alasan digunakan kata tanya 'mengapa'."
-        },
-        {
-          type: "input",
-          question: "Kata dasar dari 'berlari' adalah ...",
-          correctAnswers: ["lari"],
-          explanation: "Bentuk dasar 'berlari' adalah 'lari'."
-        }
+      english: [
+{
+  type: "choice",
+  question: "Which sentence is in the Present Continuous tense?",
+  options: ["He plays football every day.", "He is playing football now.", "He played football yesterday.", "He will play football tomorrow."],
+  answerIndex: 1,
+  explanation: "Present Continuous = is/am/are + verb-ing. 'He is playing' shows an action happening now."
+},
+{
+  type: "choice",
+  question: "Choose the correct Past Simple sentence.",
+  options: ["She is cooking dinner.", "She cooks dinner.", "She cooked dinner yesterday.", "She has cooked dinner."],
+  answerIndex: 2,
+  explanation: "Past Simple uses verb + ed for regular verbs and often includes a time marker such as 'yesterday'."
+},
+{
+  type: "choice",
+  question: "Which adjective is comparative?",
+  options: ["Big", "The biggest", "Bigger", "Very big"],
+  answerIndex: 2,
+  explanation: "Comparative adjectives compare two things: bigger, smaller, taller, etc."
+},
+{
+  type: "choice",
+  question: "The Nile is ___ river in the world.",
+  options: ["long", "longer", "the longest", "as long as"],
+  answerIndex: 2,
+  explanation: "Superlative form for comparing more than two: the longest."
+},
+{
+  type: "choice",
+  question: "Which sentence uses 'going to' for a plan?",
+  options: ["I think it will rain.", "I am going to visit my grandma tomorrow.", "It rains every day.", "I visited her yesterday."],
+  answerIndex: 1,
+  explanation: "'Going to' is used for future plans or intentions."
+},
+{
+  type: "choice",
+  question: "Choose the correct modal verb: You ___ wear a helmet when riding a bike.",
+  options: ["can", "should", "must", "could"],
+  answerIndex: 2,
+  explanation: "'Must' expresses strong obligation."
+},
+{
+  type: "choice",
+  question: "She has lived here ___ 5 years.",
+  options: ["for", "since", "at", "from"],
+  answerIndex: 0,
+  explanation: "'For' is used for duration (for 5 years)."
+},
+{
+  type: "choice",
+  question: "Which preposition completes the sentence: The cat is hiding ___ the table.",
+  options: ["between", "under", "above", "outside"],
+  answerIndex: 1,
+  explanation: "'Under' describes something below another object."
+},
+{
+  type: "choice",
+  question: "Choose the correct sentence with adverbs of frequency.",
+  options: ["He goes always to school.", "Always he goes to school.", "He always goes to school.", "He goes to always school."],
+  answerIndex: 2,
+  explanation: "Adverb of frequency is placed before the main verb: He always goes."
+},
+{
+  type: "choice",
+  question: "Which sentence uses 'because' correctly?",
+  options: ["She stayed home because she was sick.", "Because she was sick she stayed home?", "Because was she sick stayed home.", "She stayed home sick because."],
+  answerIndex: 0,
+  explanation: "Because introduces a reason clause."
+},
+{
+  type: "choice",
+  question: "Choose the correct meaning of the word 'talented'.",
+  options: ["Very tired", "Having a natural skill", "Easy to break", "Not friendly"],
+  answerIndex: 1
+},
+{
+  type: "choice",
+  question: "Which of the following is a place where scientists work?",
+  options: ["Library", "Laboratory", "Bakery", "Gym"],
+  answerIndex: 1
+},
+{
+  type: "choice",
+  question: "What is the superlative form of 'interesting'?",
+  options: ["More interesting", "Most interesting", "Interestingest", "The interestest"],
+  answerIndex: 1
+},
+{
+  type: "choice",
+  question: "Choose the correct future prediction using 'will'.",
+  options: ["I am going to be late.", "She will probably come to the party.", "She is coming to the party now.", "She came to the party."],
+  answerIndex: 1,
+  explanation: "'Will' is used for predictions or decisions made at the moment."
+},
+{
+  type: "choice",
+  question: "Which sentence is correct?",
+  options: ["There is much apples.", "There are many apples.", "There is many apples.", "There are much apples."],
+  answerIndex: 1,
+  explanation: "'Many' is used with countable nouns like apples."
+},
+{
+  type: "choice",
+  question: "Choose the correct phrasal verb: Please ___ the lights when you leave.",
+  options: ["turn on", "turn off", "take off", "put on"],
+  answerIndex: 1,
+  explanation: "'Turn off' means to stop the electricity."
+},
+{
+  type: "choice",
+  question: "Which sentence is in Present Perfect?",
+  options: ["I have finished my homework.", "I finish my homework.", "I am finishing my homework.", "I finished my homework."],
+  answerIndex: 0,
+  explanation: "Present Perfect uses have/has + past participle."
+},
+{
+  type: "choice",
+  question: "Choose the correct word: A dolphin is a very ___ animal.",
+  options: ["intelligent", "dangerous", "noisy", "lazy"],
+  answerIndex: 0
+},
+{
+  type: "choice",
+  question: "Choose the correct connector: ___ it was raining, we went outside.",
+  options: ["And", "But", "Although", "So"],
+  answerIndex: 2,
+  explanation: "'Although' shows contrast."
+},
+{
+  type: "input",
+  question: "Fill in the blank: My father works in a hospital. He is a ______.",
+  correctAnswers: ["doctor"],
+  explanation: "Vocabulary about jobs: A person who works in a hospital helping sick people is a doctor."
+},
+{
+  type: "input",
+  question: "Fill in the blank: A tiger is a wild ______ that lives in the forest.",
+  correctAnswers: ["animal"],
+  explanation: "Vocabulary about animals & habitats: Tiger is a wild animal."
+},
+{
+  type: "input",
+  question: "Fill in the blank: To stay healthy, we should eat more fruits and ______.",
+  correctAnswers: ["vegetables", "veggies"],
+  explanation: "Vocabulary about food and health: Fruits and vegetables are healthy foods."
+},
+{
+  type: "input",
+  question: "Fill in the blank: A smartphone is a type of modern ______ we use every day.",
+  correctAnswers: ["technology", "device", "gadget"],
+  explanation: "Vocabulary about technology: Smartphone is a modern device/gadget."
+},
+{
+  type: "input",
+  question: "Fill in the blank: The weather is very cold today. Please wear your ______.",
+  correctAnswers: ["jacket", "coat"],
+  explanation: "Vocabulary about weather & clothing: A jacket or coat is worn during cold weather."
+},
+{
+  type: "input",
+  question: "Reading: 'Mira loves science. She spends her afternoons making small experiments in her room. Her dream is to become a scientist in the future.'\nWhat does Mira want to be in the future? ______",
+  correctAnswers: ["scientist"],
+  explanation: "The text states: 'Her dream is to become a scientist.'"
+},
+{
+  type: "input",
+  question: "Reading: 'Every Saturday, Rafi helps his mother at the market. He carries bags, cleans the stall, and talks politely to customers. He enjoys helping people.'\nWhere does Rafi help his mother? ______",
+  correctAnswers: ["market", "the market"],
+  explanation: "The passage clearly mentions: 'Rafi helps his mother at the market.'"
+},
+{
+  type: "input",
+  question: "Reading: 'Lina keeps a small diary. She writes about her school activities, her feelings, and the things she wants to do. She writes in it every night before sleeping.'\nWhat does Lina write in every night? ______",
+  correctAnswers: ["diary", "her diary"],
+  explanation: "The text says: 'Lina keeps a small diary... She writes in it every night.'"
+},
+{
+  type: "input",
+  question: "Reading: 'Tom’s family visited the beach last weekend. Tom built a sandcastle, swam in the sea, and collected seashells. It was his favorite trip this year.'\nWhat did Tom build at the beach? ______",
+  correctAnswers: ["sandcastle", "a sandcastle"],
+  explanation: "The story says: 'Tom built a sandcastle.'"
+},
+{
+  type: "input",
+  question: "Reading: 'Dika takes care of a small garden behind his house. He waters the plants every morning and checks the soil. His favorite plant is the sunflower because it grows tall and bright.'\nWhat is Dika’s favorite plant? ______",
+  correctAnswers: ["sunflower", "the sunflower"],
+  explanation: "The text says: 'His favorite plant is the sunflower.'"
+},
+{
+  type: "input",
+  question: "Rewrite the sentence using correct punctuation: 'my friend lives in jakarta'\nAnswer: ______",
+  correctAnswers: ["My friend lives in Jakarta."],
+  explanation: "Capital letter at the beginning (My) and for proper noun (Jakarta). Add a full stop."
+},
+{
+  type: "input",
+  question: "Arrange the words into a correct sentence: 'playing / is / the guitar / she'\nAnswer: ______",
+  correctAnswers: ["She is playing the guitar."],
+  explanation: "Correct order: Subject (She) + to be (is) + verb-ing (playing) + object (the guitar)."
+},
+{
+  type: "choice",
+  question: "Choose the sentence with correct capitalization.",
+  options: [
+    "my brother and i went to jakarta.",
+    "My brother and I went to jakarta.",
+    "My Brother and i went to Jakarta.",
+    "My brother and I went to Jakarta."
+  ],
+  answerIndex: 3,
+  explanation: "Capital letters are used at the beginning of the sentence, for the pronoun 'I', and for the proper noun 'Jakarta'."
+},
+{
+  type: "choice",
+  question: "Choose the best topic sentence for a paragraph about your hobby.",
+  options: [
+    "I have many things at home.",
+    "I like reading books in my free time.",
+    "My mother works very hard every day.",
+    "The weather is very hot today."
+  ],
+  answerIndex: 1,
+  explanation: "Topic sentence must introduce the main idea of the paragraph—reading as a hobby."
+},
+{
+  type: "choice",
+  question: "Choose the correct sentence order to form a logical paragraph.",
+  options: [
+    "Finally, we went home. → First, we arrived at the zoo. → Then, we saw many animals.",
+    "Then, we saw many animals. → First, we arrived at the zoo. → Finally, we went home.",
+    "First, we arrived at the zoo. → Then, we saw many animals. → Finally, we went home.",
+    "We went home. → We saw animals. → We arrived."
+  ],
+  answerIndex: 2,
+  explanation: "A logical sequence uses: First → Then → Finally."
+},
+{
+  type: "choice",
+  question: "Choose the sentence that uses the correct past tense.",
+  options: [
+    "Yesterday, I write a letter to my friend.",
+    "Yesterday, I wrote a letter to my friend.",
+    "Yesterday, I writed a letter to my friend.",
+    "Yesterday, I writing a letter to my friend."
+  ],
+  answerIndex: 1,
+  explanation: "'Write' is an irregular verb. Past form = 'wrote'."
+},
+{
+  type: "choice",
+  question: "Choose the sentence that is BEST for describing a place.",
+  options: [
+    "The park is big, green, and very clean.",
+    "I like the park.",
+    "The park is a place.",
+    "The park has things."
+  ],
+  answerIndex: 0,
+  explanation: "A good descriptive sentence uses adjectives and specific details."
+},
+{
+  type: "choice",
+  question: "Your friend asks: 'Can you tell me how to get to the library?' Which is the best response?",
+  options: [
+    "Yes, I like books.",
+    "Go straight and turn right. The library is on your left.",
+    "The library is big.",
+    "I am going home."
+  ],
+  answerIndex: 1,
+  explanation: "The correct speaking response must give directions, not unrelated information."
+},
+{
+  type: "choice",
+  question: "Listening-style: You hear, 'Please bring your workbook, pencil, and eraser to class tomorrow.' What must you bring?",
+  options: [
+    "Only a workbook",
+    "A workbook and snack",
+    "A workbook, pencil, and eraser",
+    "Only a pencil"
+  ],
+  answerIndex: 2,
+  explanation: "The instruction mentions all three items clearly: workbook, pencil, and eraser."
+},
+{
+  type: "choice",
+  question: "Speaking: Choose the best sentence to describe your daily routine.",
+  options: [
+    "I am school every day.",
+    "I go to school every morning at 7 a.m.",
+    "School is a place.",
+    "The morning is good."
+  ],
+  answerIndex: 1,
+  explanation: "A speaking routine sentence uses Present Simple and gives a clear daily activity."
+},
+{
+  type: "choice",
+  question: "Listening-style: You hear your teacher say, 'Don't forget, the test will start at 9 a.m.' What time does the test start?",
+  options: [
+    "8 a.m.",
+    "9 a.m.",
+    "10 a.m.",
+    "In the afternoon"
+  ],
+  answerIndex: 1,
+  explanation: "The audio clearly states the test begins at 9 a.m."
+},
+{
+  type: "choice",
+  question: "Speaking: Your friend says, 'I'm not feeling well today.' What is the BEST response?",
+  options: [
+    "That's great!",
+    "Why are you here?",
+    "I don't care.",
+    "I'm sorry to hear that. Get well soon."
+  ],
+  answerIndex: 3,
+  explanation: "Good speaking skills include showing empathy and giving a polite response."
+},
+
+{
+  type: "choice",
+  question: "Reading: What is the main idea of this text? 'Tom loves science. He spends his free time building small robots and reading books about space. He wants to be an engineer when he grows up.'",
+  options: ["Tom likes animals.", "Tom is interested in science and robotics.", "Tom wants to be a teacher.", "Tom doesn’t enjoy learning."],
+  answerIndex: 1,
+  explanation: "The text focuses on Tom’s interest in science, robots, and his dream job."
+}
+
       ]
     };
 
@@ -1405,7 +2314,7 @@
       return [
         ...questionBank.math,
         ...questionBank.science,
-        ...questionBank.indo
+        ...questionBank.english
       ];
     }
 
@@ -1482,7 +2391,7 @@
       switch (cat) {
         case "math": return "Math";
         case "science": return "Science";
-        case "indo": return "Bahasa Indo";
+        case "english": return "English";
         case "mix": return "Mix";
         default: return "Latihan";
       }
@@ -1834,12 +2743,12 @@
 
       if (percent === 100) {
         emojiResult.textContent = "🌟";
-        resultTitle.textContent = "Perfect! Juara banget, Ubaid! 🔥";
+        resultTitle.textContent = "Perfect! Math & Science Hero! 🔥";
         resultMessage.textContent =
           "Semua soal benar! Ulangi atau naikkan jumlah soalnya untuk tantangan baru.";
       } else if (percent >= 80) {
         emojiResult.textContent = "🏆";
-        resultTitle.textContent = "Keren! Tinggal sedikit lagi! 💪";
+        resultTitle.textContent = "Keren banget! 💪";
         resultMessage.textContent =
           "Nilaimu sudah tinggi. Coba cek lagi soal-soal yang masih salah, ya.";
       } else if (percent >= 50) {
