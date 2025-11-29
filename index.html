@@ -3,16 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ubaid Lab</title>
+  <title>Ubaid Maths Lab</title>
 
-  <!-- Google Font mirip KooBits -->
+  <!-- Google Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      /* Palet ala KooBits */
       --kb-blue-dark: #0069b8;
       --kb-blue: #00a4ff;
       --kb-blue-soft: #e3f5ff;
@@ -64,42 +63,10 @@
       box-shadow: var(--shadow-soft);
       border: 1px solid rgba(255, 255, 255, 0.25);
       backdrop-filter: blur(12px);
+      position: relative;
     }
-.input-answer-row {
-  display: none;
-  flex-direction: column;
-  gap: 10px;
-  margin-bottom: 10px;
-}
 
-.input-group {
-  display: flex;
-  flex-direction: column;
-}
-
-.input-group label {
-  font-size: 12px;
-  font-weight: 700;
-  color: #1565c0;
-  margin-bottom: 4px;
-}
-
-.input-group input {
-  border-radius: 10px;
-  padding: 8px 12px;
-  border: 2px solid #e3f2fd;
-  background: #f9fbff;
-  outline: none;
-  font-size: 13px;
-  color: var(--text-main);
-}
-
-.input-group input:focus {
-  border-color: #00a4ff;
-  box-shadow: 0 0 0 1px rgba(33,150,243,0.4);
-}
-
-    /* Top bar ala KooBits */
+    /* Top bar */
     .top-bar {
       display: flex;
       align-items: center;
@@ -155,10 +122,6 @@
       font-weight: 700;
     }
 
-    .top-nav span.icon {
-      font-size: 18px;
-    }
-
     .top-right {
       display: flex;
       align-items: center;
@@ -189,7 +152,7 @@
       box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     }
 
-    /* Main content layout */
+    /* Main layout */
     .app-main {
       padding: 18px 22px 22px;
       display: grid;
@@ -198,7 +161,7 @@
       background: radial-gradient(circle at top, #3ab8ff 0, #0588d4 40%, #0367a4 100%);
     }
 
-    /* Sidebar kiri: menu besar */
+    /* Sidebar */
     .side-menu {
       display: flex;
       flex-direction: column;
@@ -223,7 +186,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 28px;
+      font-size: 38px;
       color: #fff;
       box-shadow: 0 6px 14px rgba(0,0,0,0.3);
     }
@@ -267,7 +230,7 @@
 
     .xp-level {
       margin-top: 4px;
-      font-size: 10px;
+      font-size: 12px;
       padding: 2px 6px;
       border-radius: 999px;
       background: #00c853;
@@ -282,7 +245,6 @@
       display: flex;
       align-items: center;
       gap: 10px;
-      cursor: default;
     }
 
     .side-tile-icon {
@@ -312,14 +274,14 @@
       color: var(--muted);
     }
 
-    /* Right main area */
+    /* Main col */
     .main-col {
       display: flex;
       flex-direction: column;
       gap: 16px;
     }
 
-    /* Hero Daily Challenge */
+    /* Hero */
     .hero-daily {
       background: #ffce32;
       border-radius: var(--radius-xl);
@@ -408,7 +370,7 @@
       box-shadow: 0 7px 14px rgba(204, 96, 0, 0.6);
     }
 
-    /* Controls dropdown tampil simple seperti pill */
+    /* Controls */
     .controls-row {
       display: flex;
       flex-wrap: wrap;
@@ -451,7 +413,7 @@
       color: #000;
     }
 
-    /* Empty state & quiz card */
+    /* Empty state */
     .empty-state {
       margin-top: 10px;
       padding: 14px 16px;
@@ -476,6 +438,7 @@
       font-size: 22px;
     }
 
+    /* Quiz card */
     .quiz-card {
       margin-top: 10px;
       padding: 14px 16px 16px;
@@ -568,12 +531,26 @@
       transition: width 0.25s ease-out;
     }
 
-    /* Question text & options */
     .question-text {
       font-size: 15px;
       font-weight: 700;
       color: var(--text-main);
-      margin-bottom: 10px;
+      margin-bottom: 6px;
+    }
+
+    /* Gambar soal */
+    .question-image {
+      margin: 4px 0 10px;
+      text-align: center;
+      display: none;
+    }
+
+    .question-image img {
+      max-width: 100%;
+      max-height: 230px;
+      border-radius: 14px;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.18);
+      background: #ffffff;
     }
 
     .options {
@@ -693,7 +670,7 @@
       cursor: default;
     }
 
-    /* Feedback & bottom actions */
+    /* Feedback */
     .feedback-row {
       display: flex;
       justify-content: space-between;
@@ -755,80 +732,111 @@
       cursor: default;
     }
 
-    /* Result card */
+    /* Result card (backup, tidak dipakai tampilan utama) */
     .result-card {
-      margin-top: 10px;
-      padding: 16px 16px 16px;
-      border-radius: var(--radius-lg);
-      background: linear-gradient(135deg, #66bb6a, #aed581);
-      color: #1b5e20;
-      box-shadow: var(--shadow-soft);
+      display: none;
     }
 
-    .result-header {
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
-      margin-bottom: 10px;
+    /* === MODAL HASIL NILAI === */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.55);
+      display: none;
+      justify-content: center;
       align-items: center;
+      z-index: 999;
     }
 
-    .result-main h2 {
+    .modal-box {
+      background: #ffffff;
+      padding: 24px 26px 22px;
+      border-radius: 24px;
+      max-width: 420px;
+      width: 90%;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+      position: relative;
+    }
+
+    .modal-icon {
+      font-size: 42px;
+      margin-bottom: 6px;
+    }
+
+    .modal-title {
       font-size: 18px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #1565c0;
+      margin-bottom: 4px;
+    }
+
+    .modal-score {
+      font-size: 72px;
       font-weight: 900;
+      line-height: 1;
+      color: #ff6f00;
+      margin: 6px 0 4px;
     }
 
-    .result-main h2 span.icon {
-      font-size: 26px;
+    .modal-score span {
+      font-size: 30px;
+      vertical-align: top;
+      margin-left: 4px;
     }
 
-    .result-main p {
+    .modal-sub {
       font-size: 13px;
-      color: #234d20;
+      color: #455a64;
+      margin-bottom: 10px;
     }
 
-    .result-score {
-      text-align: right;
-      font-size: 13px;
-      color: #1b5e20;
-      font-weight: 700;
+    .modal-sub span.tag {
+      font-weight: 800;
+      color: #2e7d32;
     }
 
-    .result-score strong {
-      font-size: 20px;
-    }
-
-    .result-details {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 6px;
+    .modal-detail {
       font-size: 11px;
+      color: #607d8b;
+      margin-bottom: 14px;
     }
 
-    .chip {
-      padding: 4px 10px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.9);
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-weight: 700;
+    .modal-detail strong {
+      color: #37474f;
     }
 
-    .chip span.icon {
-      font-size: 14px;
-    }
-
-    .result-actions {
-      margin-top: 10px;
+    .modal-buttons {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      justify-content: flex-end;
+      justify-content: center;
+      margin-top: 4px;
+    }
+
+    .modal-btn-primary {
+      border-radius: 999px;
+      border: none;
+      padding: 9px 16px;
+      font-size: 12px;
+      font-weight: 800;
+      background: linear-gradient(135deg, #ff8a3d, #ff5722);
+      color: #fff;
+      cursor: pointer;
+      box-shadow: 0 6px 14px rgba(204, 96, 0, 0.7);
+    }
+
+    .modal-btn-secondary {
+      border-radius: 999px;
+      border: 1px solid #bbdefb;
+      padding: 8px 14px;
+      font-size: 12px;
+      font-weight: 700;
+      background: #ffffff;
+      color: #1565c0;
+      cursor: pointer;
     }
 
     /* Responsive */
@@ -844,20 +852,6 @@
       }
     }
 
-.question-image {
-  margin: 6px 0 10px;
-  display: none;          /* default: disembunyikan kalau nggak ada gambar */
-  text-align: center;
-}
-
-.question-image img {
-  max-width: 100%;
-  max-height: 220px;
-  border-radius: 14px;
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
-  background: #ffffff;
-}
-
     @media (max-width: 640px) {
       body {
         padding: 10px;
@@ -872,6 +866,12 @@
       }
       .app-main {
         padding: 14px;
+      }
+      .modal-box {
+        padding: 20px 18px 18px;
+      }
+      .modal-score {
+        font-size: 56px;
       }
     }
   </style>
@@ -896,20 +896,20 @@
     </header>
 
     <main class="app-main">
-      <!-- SIDEBAR LEFT -->
+      <!-- SIDEBAR -->
       <aside class="side-menu">
         <section class="profile-card">
           <div class="profile-avatar">🤖</div>
           <div class="profile-info">
             <h2>Ubaid Badzil Azkandrias</h2>
-            <p>Grade 6 • Daily Practice</p>
+            <p>Daily Practice</p>
           </div>
           <div class="xp-badge">
             <div class="xp-main">
               <span class="icon">⭐</span>
               <span id="topScore">0 XP</span>
             </div>
-            <div class="xp-level">Lv. 6</div>
+            <div class="xp-level">Grade 6</div>
           </div>
         </section>
 
@@ -936,15 +936,15 @@
         </div>
       </aside>
 
-      <!-- MAIN COLUMN -->
+      <!-- MAIN COL -->
       <section class="main-col">
         <!-- HERO -->
         <section class="hero-daily">
           <div class="hero-text">
-            <h1>Pearson Mock Year 6</h1>
-            <p>Special practice for Ubaid before Pearson Mock Test I.</p>
+            <h1>Examination Primary Grade 6</h1>
+            <p>Special practice for Ubaid before Final Exam.</p>
             <div class="hero-meta">
-              Select the subject & number of questions below, then press
+              Pilih subject & jumlah soal di bawah, lalu tekan
               <strong>Start</strong>.
             </div>
           </div>
@@ -957,7 +957,7 @@
           </div>
         </section>
 
-        <!-- CONTROL PILLS -->
+        <!-- CONTROLS -->
         <section class="controls-row" style="margin-top: 6px;">
           <div class="controls-pill">
             <label for="categorySelect">Subject</label>
@@ -972,9 +972,8 @@
           <div class="controls-pill">
             <label for="questionCountSelect">Questions</label>
             <select id="questionCountSelect">
-              <option value="5">5 (Quick)</option>
-              <option value="10" selected>10 (Standard)</option>
-              <option value="15">15 (Challenge)</option>
+              <option value="15" selected>15 (Standard)</option>
+              <option value="20">20 (Challenge)</option>
             </select>
           </div>
         </section>
@@ -998,7 +997,7 @@
                   <span id="categoryTag" class="category">Math</span>
                   <span id="questionTag">Question 1 of 10</span>
                 </div>
-                <h2 id="quizTitle">Kerjakan soal berikut dengan teliti ya, Ubaid! 💪</h2>
+                <h2 id="quizTitle">Fokus sebentar, lalu kita rayakan skornya! 🎉</h2>
               </div>
               <div class="score-pill">
                 <span class="icon">⭐</span>
@@ -1017,7 +1016,6 @@
             </div>
 
             <div class="question-text" id="questionText"></div>
- 
             <div class="question-image" id="questionImageContainer"></div>
 
             <div class="options" id="optionsContainer"></div>
@@ -1037,21 +1035,20 @@
                 <input type="text" id="input3" autocomplete="off" />
               </div>
 
-              <button id="checkInputBtn">Cek ✅</button>
+              <button id="checkInputBtn">Check ✅</button>
             </div>
 
             <div class="feedback-row">
               <div class="feedback" id="feedback"></div>
               <div class="bottom-actions">
-                <button class="secondary outline" id="skipBtn">Lewati ⏭️</button>
-                <button class="secondary" id="nextBtn" disabled>Berikutnya ➜</button>
+                <button class="secondary outline" id="skipBtn">Skip ⏭️</button>
+                <button class="secondary" id="nextBtn" disabled>Next ➜</button>
               </div>
             </div>
           </section>
 
-
-          <!-- RESULT CARD -->
-          <section class="result-card" id="resultCard" style="display:none;">
+          <!-- RESULT CARD (backup, tidak dipakai langsung) -->
+          <section class="result-card" id="resultCard">
             <div class="result-header">
               <div class="result-main">
                 <h2>
@@ -1059,13 +1056,13 @@
                   <span id="resultTitle">Keren, Ubaid!</span>
                 </h2>
                 <p id="resultMessage">
-                  Kamu sudah menyelesaikan semua soal. Lihat skor dan ulangi kalau mau naik level lagi.
+                  Kamu sudah menyelesaikan semua soal.
                 </p>
               </div>
               <div class="result-score">
                 Total Score<br />
                 <strong><span id="resultScore">0</span></strong>
-                <span style="font-size:12px;">/ <span id="resultMaxScore">10</span></span>
+                <span style="font-size:12px;">/ <span id="resultMaxScore">100</span></span>
               </div>
             </div>
 
@@ -1094,16 +1091,41 @@
 
             <div class="result-actions">
               <button class="secondary outline" id="backToStartBtn">
-                🔁 Kembali ke Daily Challenge
+                🔁 Back to Final Exam
               </button>
               <button class="secondary" id="retryBtn">
-                🔄 Ulangi sesi ini
+                🔄 Retry this session
               </button>
             </div>
           </section>
         </section>
       </section>
     </main>
+
+    <!-- MODAL NILAI AKHIR -->
+    <div class="modal-overlay" id="resultModal">
+      <div class="modal-box">
+        <div class="modal-icon" id="modalEmoji">🏆</div>
+        <div class="modal-title">FINAL SCORE</div>
+        <div class="modal-score" id="modalScore">100</div>
+        <div class="modal-sub">
+          <span id="modalMessageShort">Keren banget, Ubaid!</span>
+        </div>
+        <div class="modal-detail">
+          Benar: <strong><span id="modalCorrect">0</span></strong> •
+          Salah: <strong><span id="modalWrong">0</span></strong> •
+          Dilewati: <strong><span id="modalSkipped">0</span></strong>
+        </div>
+        <div class="modal-buttons">
+          <button class="modal-btn-primary" id="modalRetryBtn">
+            🔄 Retry this session
+          </button>
+          <button class="modal-btn-secondary" id="modalCloseBtn">
+            🏠 Back to Final Exam
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
 
   <script>
@@ -1121,6 +1143,607 @@
           answerIndex: 1,
           explanation: "Bilangan prima adalah bilangan yang hanya bisa dibagi 1 dan dirinya sendiri"
         },
+        {
+  type: "input",
+  question: "3/4 + 2/3 = ....",
+  correctAnswers: ["17/12", "1 5/12"],
+  explanation: "Samakan penyebut: 3/4 = 9/12 dan 2/3 = 8/12. Hasilnya 17/12."
+},
+{
+  type: "input",
+  question: "5/6 - 1/4 = ....",
+  correctAnswers: ["7/12"],
+  explanation: "5/6 = 10/12, 1/4 = 3/12. Selisihnya 7/12."
+},
+{
+  type: "input",
+  question: "2/5 × 3/4 = ....",
+  correctAnswers: ["6/20", "3/10"],
+  explanation: "Perkalian pecahan langsung pembilang dan penyebut. 6/20 disederhanakan menjadi 3/10."
+},
+{
+  type: "input",
+  question: "4/9 ÷ 2/3 = ....",
+  correctAnswers: ["2/3"],
+  explanation: "Pembagian pecahan = dikali kebalikan → 4/9 × 3/2 = 12/18 = 2/3."
+},
+{
+  type: "input",
+  question: "Convert 1 2/5 to an improper fraction = ....",
+  correctAnswers: ["7/5"],
+  explanation: "1 × 5 = 5, tambah pembilang 2 → 7/5."
+},
+{
+  type: "input",
+  question: "Convert 11/4 to a mixed number = ....",
+  correctAnswers: ["2 3/4"],
+  explanation: "11 ÷ 4 = 2 sisa 3 → 2 3/4."
+},
+{
+  type: "input",
+  question: "Compare: 7/8 .... 5/6 (use < or >)",
+  correctAnswers: [">"],
+  explanation: "7/8 = 0.875 dan 5/6 ≈ 0.833, jadi 7/8 lebih besar."
+},
+{
+  type: "input",
+  question: "Simplify 36/48 = ....",
+  correctAnswers: ["3/4"],
+  explanation: "36/48 dibagi 12 → 3/4."
+},
+{
+  type: "input",
+  question: "Find 1/3 of 27 = ....",
+  correctAnswers: ["9"],
+  explanation: "27 dibagi 3 = 9."
+},
+{
+  type: "input",
+  question: "If 2/7 of a number is 16, the number is ....",
+  correctAnswers: ["56"],
+  explanation: "Bilangan = 16 ÷ (2/7) = 16 × 7/2 = 56."
+},
+{
+  type: "input",
+  question: "3.75 + 2.6 = ....",
+  correctAnswers: ["6.35"],
+  explanation: "Jumlahkan desimal seperti bilangan biasa: 3.75 + 2.60 = 6.35."
+},
+{
+  type: "input",
+  question: "7.8 - 3.45 = ....",
+  correctAnswers: ["4.35"],
+  explanation: "Ubah 7.8 menjadi 7.80 agar sejajar."
+},
+{
+  type: "input",
+  question: "2.5 × 0.4 = ....",
+  correctAnswers: ["1.0", "1"],
+  explanation: "25 × 4 = 100, lalu geser 2 tempat desimal → 1.0."
+},
+{
+  type: "input",
+  question: "6.4 ÷ 0.2 = ....",
+  correctAnswers: ["32"],
+  explanation: "Kedua bilangan dikali 10 → 64 ÷ 2 = 32."
+},
+{
+  type: "input",
+  question: "Round 8.526 to two decimal places = ....",
+  correctAnswers: ["8.53"],
+  explanation: "Angka ketiga 6 → pembulatan naik."
+},
+{
+  type: "input",
+  question: "Write 0.75 as a fraction = ....",
+  correctAnswers: ["3/4"],
+  explanation: "0.75 = 75/100 = 3/4."
+},
+{
+  type: "input",
+  question: "Convert 3.2 km to meters = .... m",
+  correctAnswers: ["3200"],
+  explanation: "1 km = 1000 m → 3.2 × 1000 = 3200."
+},
+{
+  type: "input",
+  question: "12.09 − 0.8 = ....",
+  correctAnswers: ["11.29"],
+  explanation: "0.8 → 0.80, kemudian kurangi."
+},
+{
+  type: "input",
+  question: "0.45 ÷ 0.05 = ....",
+  correctAnswers: ["9"],
+  explanation: "45/100 ÷ 5/100 = 45 ÷ 5 = 9."
+},
+{
+  type: "input",
+  question: "2.7 × 1.5 = ....",
+  correctAnswers: ["4.05"],
+  explanation: "27 × 15 = 405 → geser dua tempat desimal."
+},
+{
+  type: "input",
+  question: "Find 30% of 200 = ....",
+  correctAnswers: ["60"],
+  explanation: "30% = 0.3 → 0.3 × 200 = 60."
+},
+{
+  type: "input",
+  question: "Find 25% of 80 = ....",
+  correctAnswers: ["20"],
+  explanation: "25% adalah seperempat → 80 ÷ 4 = 20."
+},
+{
+  type: "input",
+  question: "Find 12% of 150 = ....",
+  correctAnswers: ["18"],
+  explanation: "12/100 × 150 = 18."
+},
+{
+  type: "input",
+  question: "45 is what percent of 90? = ....%",
+  correctAnswers: ["50"],
+  explanation: "45/90 = 1/2 = 50%."
+},
+{
+  type: "input",
+  question: "Increase 120 by 25% = ....",
+  correctAnswers: ["150"],
+  explanation: "25% dari 120 = 30 → total = 150."
+},
+{
+  type: "input",
+  question: "Decrease 200 by 10% = ....",
+  correctAnswers: ["180"],
+  explanation: "10% × 200 = 20 → 200 − 20 = 180."
+},
+{
+  type: "input",
+  question: "Convert 0.2 to percent = ....%",
+  correctAnswers: ["20"],
+  explanation: "0.2 × 100 = 20%."
+},
+{
+  type: "input",
+  question: "Convert 3/5 to percent = ....%",
+  correctAnswers: ["60"],
+  explanation: "3/5 = 0.6 → 60%."
+},
+{
+  type: "input",
+  question: "A item is discounted 15% from 300. The discount amount is ....",
+  correctAnswers: ["45"],
+  explanation: "15% × 300 = 45."
+},
+{
+  type: "input",
+  question: "Find 70% of 250 = ....",
+  correctAnswers: ["175"],
+  explanation: "0.7 × 250 = 175."
+},
+{
+  type: "input",
+  question: "Write the ratio of 12 to 18 in simplest form = ....",
+  correctAnswers: ["2:3"],
+  explanation: "12:18 dibagi 6 → 2:3."
+},
+{
+  type: "input",
+  question: "A recipe uses sugar and flour in a ratio 3:5. If sugar is 9 cups, flour is .... cups",
+  correctAnswers: ["15"],
+  explanation: "3→9 artinya kali 3; 5×3 = 15."
+},
+{
+  type: "input",
+  question: "Divide 40 in the ratio 2:3. The larger share is ....",
+  correctAnswers: ["24"],
+  explanation: "Total bagian = 5. Bagian 3/5 × 40 = 24."
+},
+{
+  type: "input",
+  question: "The ratio of boys to girls is 4:6. Simplified, it is ....",
+  correctAnswers: ["2:3"],
+  explanation: "4:6 dibagi 2 = 2:3."
+},
+{
+  type: "input",
+  question: "If a map scale is 1:1000, then 7 cm on the map represents .... cm in real life",
+  correctAnswers: ["7000"],
+  explanation: "Kali 1000 → 7×1000."
+},
+{
+  type: "input",
+  question: "Complete the proportion: 8/12 = 2/....",
+  correctAnswers: ["3"],
+  explanation: "8/12 disederhanakan = 2/3."
+},
+{
+  type: "input",
+  question: "If 5 pens cost $10, then 1 pen costs ....",
+  correctAnswers: ["2"],
+  explanation: "10 ÷ 5 = 2."
+},
+{
+  type: "input",
+  question: "In a class, 15 out of 25 students are girls. The ratio of girls to all students = ....",
+  correctAnswers: ["15:25", "3:5"],
+  explanation: "15:25 disederhanakan menjadi 3:5."
+},
+{
+  type: "input",
+  question: "If 12 apples cost $48, the cost of 1 apple is ....",
+  correctAnswers: ["4"],
+  explanation: "48 ÷ 12 = 4."
+},
+{
+  type: "input",
+  question: "A shirt price increases from $40 to $50. The ratio of old price to new price = ....",
+  correctAnswers: ["4:5"],
+  explanation: "40:50 dibagi 10 → 4:5."
+},
+{
+  type: "input",
+  question: "Evaluate: 4(2x + 3) when x = 5 = ....",
+  correctAnswers: ["52"],
+  explanation: "2×5 = 10. 10+3 = 13. 4×13 = 52."
+},
+{
+  type: "input",
+  question: "Solve: y + 7 = 19. Value of y = ....",
+  correctAnswers: ["12"],
+  explanation: "19 − 7 = 12."
+},
+{
+  type: "input",
+  question: "Evaluate: 3a - 4 when a = 6 = ....",
+  correctAnswers: ["14"],
+  explanation: "3×6 = 18. 18 − 4 = 14."
+},
+{
+  type: "input",
+  question: "Solve: 5k = 45. k = ....",
+  correctAnswers: ["9"],
+  explanation: "45 ÷ 5 = 9."
+},
+{
+  type: "input",
+  question: "Evaluate: 2b² when b = 4 = ....",
+  correctAnswers: ["32"],
+  explanation: "4² = 16 → 2×16 = 32."
+},
+{
+  type: "input",
+  question: "If n/3 = 9, then n = ....",
+  correctAnswers: ["27"],
+  explanation: "9×3 = 27."
+},
+{
+  type: "input",
+  question: "Complete the pattern: 4, 7, 10, 13, ....",
+  correctAnswers: ["16"],
+  explanation: "Pola +3."
+},
+{
+  type: "input",
+  question: "Solve: 18 = m - 5. Value of m = ....",
+  correctAnswers: ["23"],
+  explanation: "18 + 5 = 23."
+},
+{
+  type: "input",
+  question: "Evaluate: (3x + 2) − (x − 1) when x = 3 = ....",
+  correctAnswers: ["9"],
+  explanation: "3×3+2 = 11. x−1 = 2. 11−2 = 9."
+},
+{
+  type: "input",
+  question: "Solve: 4(p + 2) = 24. p = ....",
+  correctAnswers: ["4"],
+  explanation: "24 ÷ 4 = 6. p + 2 = 6 → p = 4."
+},
+{
+  type: "input",
+  question: "Area of a rectangle with length 12 cm and width 5 cm = .... cm²",
+  correctAnswers: ["60"],
+  explanation: "Luas = panjang × lebar = 12×5."
+},
+{
+  type: "input",
+  question: "Perimeter of a square with side 9 cm = .... cm",
+  correctAnswers: ["36"],
+  explanation: "Keliling = 4× sisi = 4×9."
+},
+{
+  type: "input",
+  question: "Area of a triangle with base 10 cm and height 6 cm = .... cm²",
+  correctAnswers: ["30"],
+  explanation: "1/2 × alas × tinggi = 30."
+},
+{
+  type: "input",
+  question: "Find the diameter if the radius is 7 cm = .... cm",
+  correctAnswers: ["14"],
+  explanation: "Diameter = 2× jari-jari."
+},
+{
+  type: "input",
+  question: "A right angle measures .... degrees",
+  correctAnswers: ["90"],
+  explanation: "Sudut siku-siku = 90°."
+},
+{
+  type: "input",
+  question: "Sum of angles in a triangle = .... degrees",
+  correctAnswers: ["180"],
+  explanation: "Jumlah sudut segitiga selalu 180°."
+},
+{
+  type: "input",
+  question: "Volume of a cube with side 4 cm = .... cm³",
+  correctAnswers: ["64"],
+  explanation: "4³ = 64."
+},
+{
+  type: "input",
+  question: "Area of a circle with radius 3 cm (π = 3.14) = .... cm²",
+  correctAnswers: ["28.26"],
+  explanation: "πr² = 3.14 × 9 = 28.26."
+},
+{
+  type: "input",
+  question: "Perimeter of a rectangle 8 cm × 3 cm = .... cm",
+  correctAnswers: ["22"],
+  explanation: "2(p+l) = 2(8+3) = 22."
+},
+{
+  type: "input",
+  question: "A straight angle measures .... degrees",
+  correctAnswers: ["180"],
+  explanation: "Sudut lurus = 180°."
+},
+{
+  type: "input",
+  question: "Convert 1.5 km to meters = .... m",
+  correctAnswers: ["1500"],
+  explanation: "1 km = 1000 m → 1.5 × 1000 = 1500."
+},
+{
+  type: "input",
+  question: "Convert 2500 g to kilograms = .... kg",
+  correctAnswers: ["2.5"],
+  explanation: "1000 g = 1 kg → 2500 ÷ 1000 = 2.5."
+},
+{
+  type: "input",
+  question: "Convert 3 hours 15 minutes to minutes = .... minutes",
+  correctAnswers: ["195"],
+  explanation: "3 jam = 180 menit; 180 + 15 = 195."
+},
+{
+  type: "input",
+  question: "The perimeter of a square is 64 cm. One side is .... cm",
+  correctAnswers: ["16"],
+  explanation: "Keliling = 4 × sisi → 64 ÷ 4 = 16."
+},
+{
+  type: "input",
+  question: "Area of a parallelogram with base 9 cm and height 4 cm = .... cm²",
+  correctAnswers: ["36"],
+  explanation: "Luas jajar genjang = alas × tinggi."
+},
+{
+  type: "input",
+  question: "Convert 0.75 L to milliliters = .... mL",
+  correctAnswers: ["750"],
+  explanation: "1 L = 1000 mL → 0.75 × 1000 = 750."
+},
+{
+  type: "input",
+  question: "Find the volume of a rectangular prism: 5 cm × 3 cm × 2 cm = .... cm³",
+  correctAnswers: ["30"],
+  explanation: "Volume = p × l × t = 5×3×2."
+},
+{
+  type: "input",
+  question: "Convert 120 minutes to hours = .... hours",
+  correctAnswers: ["2"],
+  explanation: "120 ÷ 60 = 2 jam."
+},
+{
+  type: "input",
+  question: "Convert 400 cm to meters = .... m",
+  correctAnswers: ["4"],
+  explanation: "100 cm = 1 m → 400 ÷ 100 = 4."
+},
+{
+  type: "input",
+  question: "A rope is 3.6 m long. How many centimeters is this? = .... cm",
+  correctAnswers: ["360"],
+  explanation: "1 m = 100 cm → 3.6 × 100 = 360."
+},
+{
+  type: "input",
+  question: "Find the mean of 4, 8, 6, 10 = ....",
+  correctAnswers: ["7"],
+  explanation: "Jumlah = 28. 28 ÷ 4 = 7."
+},
+{
+  type: "input",
+  question: "Find the median of 3, 9, 5, 7, 1 = ....",
+  correctAnswers: ["5"],
+  explanation: "Urutkan → 1,3,5,7,9. Median = 5."
+},
+{
+  type: "input",
+  question: "Find the range of 12, 5, 8, 11 = ....",
+  correctAnswers: ["7"],
+  explanation: "Range = nilai tertinggi − terendah = 12 − 5."
+},
+{
+  type: "input",
+  question: "Find the mode of 6, 7, 7, 2, 1 = ....",
+  correctAnswers: ["7"],
+  explanation: "Angka yang paling sering muncul = 7."
+},
+{
+  type: "input",
+  question: "The mean of 5 numbers is 8. The total of the numbers is ....",
+  correctAnswers: ["40"],
+  explanation: "Mean = total ÷ jumlah data → total = 8 × 5."
+},
+{
+  type: "input",
+  question: "Find the mean of 10, 20, 30, 40 = ....",
+  correctAnswers: ["25"],
+  explanation: "Jumlah 100. 100 ÷ 4 = 25."
+},
+{
+  type: "input",
+  question: "In the data set 2, 4, 4, 6, 8, the mode is ....",
+  correctAnswers: ["4"],
+  explanation: "4 muncul paling banyak."
+},
+{
+  type: "input",
+  question: "Find the median of 2, 4, 6, 8 = ....",
+  correctAnswers: ["5"],
+  explanation: "Nilai tengah = (4+6)/2 = 5."
+},
+{
+  type: "input",
+  question: "Find the range of 3, 15, 9, 6 = ....",
+  correctAnswers: ["12"],
+  explanation: "Range = 15 − 3 = 12."
+},
+{
+  type: "input",
+  question: "Find the mean of 5, 7, 9 = ....",
+  correctAnswers: ["7"],
+  explanation: "Total 21. 21 ÷ 3 = 7."
+},
+{
+  type: "input",
+  question: "A box contains 48 apples. If each bag holds 6 apples, how many bags are needed? = ....",
+  correctAnswers: ["8"],
+  explanation: "48 ÷ 6 = 8."
+},
+{
+  type: "input",
+  question: "Sam bought 3 notebooks for $4 each. How much did he pay? = ....",
+  correctAnswers: ["12"],
+  explanation: "3 × 4 = 12."
+},
+{
+  type: "input",
+  question: "A car travels 60 km in 2 hours. Its speed is .... km/h",
+  correctAnswers: ["30"],
+  explanation: "60 ÷ 2 = 30."
+},
+{
+  type: "input",
+  question: "Mia has $50. She spends $18. How much money is left? = ....",
+  correctAnswers: ["32"],
+  explanation: "50 − 18 = 32."
+},
+{
+  type: "input",
+  question: "A ribbon is 120 cm long. It is cut into 8 equal pieces. Each piece is .... cm long",
+  correctAnswers: ["15"],
+  explanation: "120 ÷ 8 = 15."
+},
+{
+  type: "input",
+  question: "A book costs $12. How much do 5 books cost? = ....",
+  correctAnswers: ["60"],
+  explanation: "12 × 5 = 60."
+},
+{
+  type: "input",
+  question: "Lina walks 4 km every day. In 7 days she walks .... km",
+  correctAnswers: ["28"],
+  explanation: "4 × 7 = 28."
+},
+{
+  type: "input",
+  question: "Tom has 36 marbles. He gives 9 to his friend. He now has .... marbles",
+  correctAnswers: ["27"],
+  explanation: "36 − 9 = 27."
+},
+{
+  type: "input",
+  question: "If 1 pen costs $2, how much do 14 pens cost? = ....",
+  correctAnswers: ["28"],
+  explanation: "2 × 14 = 28."
+},
+{
+  type: "input",
+  question: "A tank holds 200 L of water. It is filled with 50 L more. Now it holds .... L",
+  correctAnswers: ["250"],
+  explanation: "200 + 50 = 250."
+},
+{
+  type: "input",
+  question: "Solve: 12 ÷ 3 × 4 = ....",
+  correctAnswers: ["16"],
+  explanation: "12 ÷ 3 = 4 → 4 × 4 = 16."
+},
+{
+  type: "input",
+  question: "Solve: 8 + 6 ÷ 3 = ....",
+  correctAnswers: ["10"],
+  explanation: "6 ÷ 3 = 2 → 8 + 2 = 10."
+},
+{
+  type: "input",
+  question: "Solve: (9 + 3) × 2 = ....",
+  correctAnswers: ["24"],
+  explanation: "9+3 = 12 → 12 × 2."
+},
+{
+  type: "input",
+  question: "Solve: 18 − 4 × 2 = ....",
+  correctAnswers: ["10"],
+  explanation: "4 × 2 = 8 → 18 − 8 = 10."
+},
+{
+  type: "input",
+  question: "Solve: 30 ÷ (5 × 2) = ....",
+  correctAnswers: ["3"],
+  explanation: "5 × 2 = 10 → 30 ÷ 10 = 3."
+},
+{
+  type: "input",
+  question: "Solve: (6 × 4) − 5 = ....",
+  correctAnswers: ["19"],
+  explanation: "6×4 = 24 → 24 − 5 = 19."
+},
+{
+  type: "input",
+  question: "Solve: 15 − (3 + 4) = ....",
+  correctAnswers: ["8"],
+  explanation: "3+4 = 7 → 15 − 7 = 8."
+},
+{
+  type: "input",
+  question: "Solve: 9 × (2 + 1) = ....",
+  correctAnswers: ["27"],
+  explanation: "2+1 = 3 → 9×3 = 27."
+},
+{
+  type: "input",
+  question: "Solve: 50 ÷ 5 + 6 = ....",
+  correctAnswers: ["16"],
+  explanation: "50 ÷ 5 = 10 → 10 + 6 = 16."
+},
+{
+  type: "input",
+  question: "Solve: (20 − 4) ÷ 2 = ....",
+  correctAnswers: ["8"],
+  explanation: "20 − 4 = 16 → 16 ÷ 2 = 8."
+},
+
         {
           type: "choice",
           question: "Which shape has one pair of parallel sides?",
@@ -2000,6 +2623,167 @@
 },
 {
   type: "choice",
+  question: "Vocabulary: Which word best completes the sentence? 'The scientist used advanced ______ to study the tiny organisms.'",
+  options: ["equipment", "celebration", "entertainment", "movement"],
+  answerIndex: 0,
+  explanation: "'Equipment' is the correct academic vocabulary used for scientific tools."
+},
+{
+  type: "choice",
+  question: "Vocabulary: Choose the word closest in meaning to 'essential'.",
+  options: ["unnecessary", "important", "confusing", "difficult"],
+  answerIndex: 1,
+  explanation: "'Essential' means very important or needed."
+},
+{
+  type: "choice",
+  question: "Vocabulary: Which phrase describes someone who is 'highly motivated'?",
+  options: ["Does not like working", "Works hard to achieve goals", "Always arrives late", "Avoids responsibilities"],
+  answerIndex: 1,
+  explanation: "'Highly motivated' means someone eager and determined to work."
+},
+{
+  type: "choice",
+  question: "Grammar: Choose the sentence written in the Present Perfect tense.",
+  options: [
+    "She has visited London twice.",
+    "She visits London twice.",
+    "She is visiting London now.",
+    "She visited London last year."
+  ],
+  answerIndex: 0,
+  explanation: "Present Perfect uses 'has/have + past participle'."
+},
+{
+  type: "choice",
+  question: "Grammar: Which sentence uses a correct conditional form?",
+  options: [
+    "If it will rain, we stay home.",
+    "If it rains, we will stay home.",
+    "If it rained, we will stay home.",
+    "If it raining, we stay home."
+  ],
+  answerIndex: 1,
+  explanation: "First conditional: If + present simple → will + verb."
+},
+{
+  type: "choice",
+  question: "Grammar: Choose the sentence that uses the passive voice.",
+  options: [
+    "The class wrote an essay.",
+    "The essay was written by the class.",
+    "The class is writing an essay.",
+    "The class will write an essay."
+  ],
+  answerIndex: 1,
+  explanation: "Passive voice uses 'to be + past participle'."
+},
+{
+  type: "choice",
+  question: "Reading: 'Although the weather was stormy, the rescue team continued searching for the missing hikers.'\nWhat does this sentence show?",
+  options: [
+    "The rescue team stopped working.",
+    "The rescue team was afraid of the storm.",
+    "The rescue team continued despite bad weather.",
+    "The hikers were already found."
+  ],
+  answerIndex: 2,
+  explanation: "'Although' shows contrast: stormy weather but they continued."
+},
+{
+  type: "choice",
+  question: "Reading: 'Sara carefully analyzed the data before writing her report.'\nWhat does the word 'analyzed' mean?",
+  options: [
+    "Ignored it",
+    "Looked at it in detail",
+    "Forgot it",
+    "Copied it quickly"
+  ],
+  answerIndex: 1,
+  explanation: "'Analyze' means examine something closely and in detail."
+},
+{
+  type: "choice",
+  question: "Reading: 'The museum offers interactive displays that allow visitors to touch, explore, and learn through hands-on activities.'\nWhat is the main idea?",
+  options: [
+    "Visitors are not allowed to enter the museum.",
+    "The museum only shows pictures.",
+    "Visitors can interact directly with exhibits.",
+    "The museum is closed on weekends."
+  ],
+  answerIndex: 2,
+  explanation: "The main focus is that the displays are interactive."
+},
+{
+  type: "choice",
+  question: "Writing: Which sentence is the BEST topic sentence for a paragraph about online safety?",
+  options: [
+    "Many websites are colorful.",
+    "It is important to stay safe while using the internet.",
+    "I use my computer every day.",
+    "The internet is sometimes slow."
+  ],
+  answerIndex: 1,
+  explanation: "A topic sentence must introduce the main idea clearly: online safety."
+},
+{
+  type: "choice",
+  question: "Writing: Choose the sentence that is clear and formal.",
+  options: [
+    "Ugh, this app is super annoying!",
+    "The application does not function properly.",
+    "This thingy is broken.",
+    "Why is this not working!?"
+  ],
+  answerIndex: 1,
+  explanation: "Formal writing uses neutral vocabulary and clear structure."
+},
+{
+  type: "choice",
+  question: "Writing: Which transition word best completes the sentence? 'I finished my homework early. ______, I helped my sister with her project.'",
+  options: ["Meanwhile", "However", "Afterwards", "Because"],
+  answerIndex: 2,
+  explanation: "'Afterwards' shows sequence: after finishing homework → help sister."
+},
+{
+  type: "choice",
+  question: "Speaking: Your teacher asks, 'Could you explain how this experiment works?' Which response is MOST appropriate?",
+  options: [
+    "Yes, it was fun.",
+    "I don't know anything.",
+    "Sure. First, we mix the two liquids, and then we observe the reaction.",
+    "I already finished it."
+  ],
+  answerIndex: 2,
+  explanation: "A speaking response must explain the process step-by-step."
+},
+{
+  type: "choice",
+  question: "Listening: You hear, 'Please ensure all electronic devices are switched off before the presentation begins.' What must you do?",
+  options: [
+    "Turn on your phone.",
+    "Turn off all electronic devices.",
+    "Start the presentation.",
+    "Charge your tablet."
+  ],
+  answerIndex: 1,
+  explanation: "'Ensure... switched off' = turn off all devices."
+},
+{
+  type: "choice",
+  question: "Speaking: Choose the most polite way to ask for clarification.",
+  options: [
+    "What are you talking about?",
+    "Huh?",
+    "Can you explain that again, please?",
+    "I didn’t listen."
+  ],
+  answerIndex: 2,
+  explanation: "Polite speaking uses 'Can you… please?' for clarification."
+},
+
+{
+  type: "choice",
   question: "The Nile is ___ river in the world.",
   options: ["long", "longer", "the longest", "as long as"],
   answerIndex: 2,
@@ -2064,6 +2848,13 @@
   question: "What is the superlative form of 'interesting'?",
   options: ["More interesting", "Most interesting", "Interestingest", "The interestest"],
   answerIndex: 1
+},
+{
+  type: "choice",
+  question: "Look at the picture below, and answer the total amount of it.",
+  image: "https://raw.githubusercontent.com/andyandriadoria/UbaidBits/main/stroberi.png",
+  options: ["One strawberry", "Two strawberries", "Three strawberries", "Four strawberries"],
+  answerIndex: 3
 },
 {
   type: "choice",
@@ -2138,31 +2929,31 @@
 },
 {
   type: "input",
-  question: "Reading: 'Mira loves science. She spends her afternoons making small experiments in her room. Her dream is to become a scientist in the future.'\nWhat does Mira want to be in the future? ______",
+  question: "'Mira loves science. She spends her afternoons making small experiments in her room. Her dream is to become a scientist in the future.'\nWhat does Mira want to be in the future? ______",
   correctAnswers: ["scientist"],
   explanation: "The text states: 'Her dream is to become a scientist.'"
 },
 {
   type: "input",
-  question: "Reading: 'Every Saturday, Rafi helps his mother at the market. He carries bags, cleans the stall, and talks politely to customers. He enjoys helping people.'\nWhere does Rafi help his mother? ______",
+  question: "'Every Saturday, Rafi helps his mother at the market. He carries bags, cleans the stall, and talks politely to customers. He enjoys helping people.'\nWhere does Rafi help his mother? ______",
   correctAnswers: ["market", "the market"],
   explanation: "The passage clearly mentions: 'Rafi helps his mother at the market.'"
 },
 {
   type: "input",
-  question: "Reading: 'Lina keeps a small diary. She writes about her school activities, her feelings, and the things she wants to do. She writes in it every night before sleeping.'\nWhat does Lina write in every night? ______",
+  question: "'Lina keeps a small diary. She writes about her school activities, her feelings, and the things she wants to do. She writes in it every night before sleeping.'\nWhat does Lina write in every night? ______",
   correctAnswers: ["diary", "her diary"],
   explanation: "The text says: 'Lina keeps a small diary... She writes in it every night.'"
 },
 {
   type: "input",
-  question: "Reading: 'Tom’s family visited the beach last weekend. Tom built a sandcastle, swam in the sea, and collected seashells. It was his favorite trip this year.'\nWhat did Tom build at the beach? ______",
+  question: "'Tom’s family visited the beach last weekend. Tom built a sandcastle, swam in the sea, and collected seashells. It was his favorite trip this year.'\nWhat did Tom build at the beach? ______",
   correctAnswers: ["sandcastle", "a sandcastle"],
   explanation: "The story says: 'Tom built a sandcastle.'"
 },
 {
   type: "input",
-  question: "Reading: 'Dika takes care of a small garden behind his house. He waters the plants every morning and checks the soil. His favorite plant is the sunflower because it grows tall and bright.'\nWhat is Dika’s favorite plant? ______",
+  question: "'Dika takes care of a small garden behind his house. He waters the plants every morning and checks the soil. His favorite plant is the sunflower because it grows tall and bright.'\nWhat is Dika’s favorite plant? ______",
   correctAnswers: ["sunflower", "the sunflower"],
   explanation: "The text says: 'His favorite plant is the sunflower.'"
 },
@@ -2275,8 +3066,343 @@
   explanation: "A speaking routine sentence uses Present Simple and gives a clear daily activity."
 },
 {
+  type: "input3",
+  question: "Complete the sentences below with I or me.",
+  image: "https://raw.githubusercontent.com/andyandriadoria/UbaidBits/main/I%20or%20Me.png",
+  correctAnswers: [
+    ["I", "i"],        // untuk X
+    ["Me", "me"],    // untuk Y
+    ["I", "i"]  // untuk Z
+],
+  explanation: "Gunakan I ketika menjadi bagian dari subjek kalimat. Gunakan me setelah preposisi seperti for, to, with, between,"
+},
+{
   type: "choice",
-  question: "Listening-style: You hear your teacher say, 'Don't forget, the test will start at 9 a.m.' What time does the test start?",
+  question: "Which word means 'a person who studies the stars and space'?",
+  options: ["Biologist", "Astronomer", "Architect", "Historian"],
+  answerIndex: 1,
+  explanation: "'Astronomer' studies astronomy and space."
+},
+{
+  type: "choice",
+  question: "Choose the word opposite in meaning to 'ancient'.",
+  options: ["Modern", "Broken", "Dangerous", "Silent"],
+  answerIndex: 0,
+  explanation: "'Modern' is the antonym of 'ancient'."
+},
+{
+  type: "choice",
+  question: "Which phrase means 'to reduce waste and protect the environment'?",
+  options: ["Throw everything away", "Recycle materials", "Use more plastic", "Leave lights on"],
+  answerIndex: 1,
+  explanation: "Recycling protects the environment."
+},
+{
+  type: "choice",
+  question: "A device used to measure temperature is a ______.",
+  options: ["Telescope", "Thermometer", "Microscope", "Calculator"],
+  answerIndex: 1,
+  explanation: "Thermometer measures temperature."
+},
+{
+  type: "choice",
+  question: "Which word best describes someone who never gives up?",
+  options: ["Lazy", "Discouraged", "Determined", "Confused"],
+  answerIndex: 2,
+  explanation: "'Determined' means persistent."
+},
+{
+  type: "choice",
+  question: "Choose the word that best fits: 'The desert has a very hot and dry ______.'",
+  options: ["climate", "language", "culture", "celebration"],
+  answerIndex: 0,
+  explanation: "Deserts have dry climates."
+},
+{
+  type: "choice",
+  question: "A person who repairs machines is called a ______.",
+  options: ["Mechanic", "Pharmacist", "Artist", "Dentist"],
+  answerIndex: 0,
+  explanation: "A mechanic fixes machines."
+},
+{
+  type: "choice",
+  question: " Which word is closest in meaning to 'predict'?",
+  options: ["Explain", "Guess", "Forecast", "Describe"],
+  answerIndex: 2,
+  explanation: "'Forecast' means to predict."
+},
+{
+  type: "choice",
+  question: "What do we call the natural home of an animal?",
+  options: ["Country", "Habitat", "Environment", "Nation"],
+  answerIndex: 1,
+  explanation: "'Habitat' = natural living place."
+},
+{
+  type: "choice",
+  question: "Which word describes someone who is very careful and pays attention to details?",
+  options: ["Careless", "Active", "Meticulous", "Friendly"],
+  answerIndex: 2,
+  explanation: "'Meticulous' means very careful."
+},
+
+{
+  type: "choice",
+  question: "Choose the correct passive sentence.",
+  options: ["They built the bridge.", "The bridge was built in 2010.", "They are building the bridge.", "The bridge builds workers."],
+  answerIndex: 1,
+  explanation: "Passive voice: was + past participle."
+},
+{
+  type: "choice",
+  question: "Which sentence uses the past perfect correctly?",
+  options: ["I had finish my work.", "I had finished my work before dinner.", "I have finished my work.", "I had finishing my work."],
+  answerIndex: 1,
+  explanation: "Past perfect: had + past participle."
+},
+{
+  type: "choice",
+  question: "Choose the correct relative pronoun: 'The book ______ I borrowed was very interesting.'",
+  options: ["who", "which", "when", "where"],
+  answerIndex: 1,
+  explanation: "'Which' refers to objects (book)."
+},
+{
+  type: "choice",
+  question: "Choose the correct modal: 'You ______ wear a seatbelt in the car. It's the law.'",
+  options: ["could", "might", "must", "may"],
+  answerIndex: 2,
+  explanation: "'Must' expresses strong obligation."
+},
+{
+  type: "choice",
+  question: "Which sentence uses future perfect correctly?",
+  options: ["I will have finished my project by Friday.", "I will finished my project Friday.", "I will has finished project Friday.", "I finishing project Friday."],
+  answerIndex: 0,
+  explanation: "Future perfect: will have + past participle."
+},
+{
+  type: "choice",
+  question: "Which is the correct complex sentence?",
+  options: ["I ate lunch and I drank water.", "When I finished my homework, I watched TV.", "I finished my homework.", "Homework finished I watched TV."],
+  answerIndex: 1,
+  explanation: "Complex sentence: conjunction + clause."
+},
+{
+  type: "choice",
+  question: "Choose the correct conditional: 'If I had more time, I ______ learn guitar.'",
+  options: ["will", "would", "am", "was"],
+  answerIndex: 1,
+  explanation: "Second conditional uses 'would'."
+},
+{
+  type: "choice",
+  question: "Choose the correct form: 'Maths ______ my favorite subject.'",
+  options: ["are", "is", "were", "be"],
+  answerIndex: 1,
+  explanation: "Maths (British English) is singular."
+},
+{
+  type: "choice",
+  question: "Choose the sentence with the correct adverb placement.",
+  options: ["She always is early.", "She is always early.", "Always she is early.", "She is early always."],
+  answerIndex: 1,
+  explanation: "Adverbs go after 'to be'."
+},
+{
+  type: "choice",
+  question: "Choose the correct verb form: 'By the time we arrived, the movie ______.'",
+  options: ["started", "has started", "had started", "is starting"],
+  answerIndex: 2,
+  explanation: "Past perfect for an action before another past action."
+},
+
+{
+  type: "choice",
+  question: "'The factory reduced plastic waste by installing new eco-friendly machines.' What is the main idea?",
+  options: ["The factory uses more plastic.", "The factory now pollutes more.", "The factory took steps to reduce waste.", "Machines were removed."],
+  answerIndex: 2,
+  explanation: "Main idea: reducing waste."
+},
+{
+  type: "choice",
+  question: "'Although the journey was long, Maya enjoyed the breathtaking view of the mountains.' What does 'breathtaking' mean?",
+  options: ["Very ugly", "Very beautiful", "Very scary", "Very small"],
+  answerIndex: 1,
+  explanation: "'Breathtaking' means stunning or beautiful."
+},
+{
+  type: "choice",
+  question: "'The volunteers distributed food to families affected by the flood.' Who received the food?",
+  options: ["Tourists", "Families affected by the flood", "Teachers", "Athletes"],
+  answerIndex: 1,
+  explanation: "Text states: families affected by the flood."
+},
+{
+  type: "choice",
+  question: "'Tom saved money for months so he could buy a new microscope.' Why did Tom save money?",
+  options: ["To buy a microscope", "To travel", "To help a friend", "To buy clothes"],
+  answerIndex: 0,
+  explanation: "Clear from the text."
+},
+{
+  type: "choice",
+  question: "'The rainforest is home to diverse species, many of which cannot be found anywhere else.' What is the meaning of 'diverse'?",
+  options: ["Few", "Different", "Dangerous", "Small"],
+  answerIndex: 1,
+  explanation: "'Diverse' means a variety or many kinds."
+},
+{
+  type: "choice",
+  question: "What can be inferred? 'Lisa turned off the lights and checked the windows before leaving the house.'",
+  options: ["She is cleaning the house.", "She is preparing to leave safely.", "She is going to sleep.", "She is reading a book."],
+  answerIndex: 1,
+  explanation: "She is preparing the house before leaving."
+},
+{
+  type: "choice",
+  question: "'The invention of the telephone changed the way people communicate.' What is this sentence about?",
+  options: ["Technology", "Sports", "Weather", "Animals"],
+  answerIndex: 0,
+  explanation: "It's about technology."
+},
+{
+  type: "choice",
+  question: "'During the experiment, students recorded each change they observed.' What does 'observed' mean?",
+  options: ["Sang", "Ignored", "Watched carefully", "Forgot"],
+  answerIndex: 2,
+  explanation: "'Observed' = watched closely."
+},
+{
+  type: "choice",
+  question: "'The castle was surrounded by tall walls to protect the people inside.' Why were the walls tall?",
+  options: ["Decoration", "To protect people", "To store food", "To make shadows"],
+  answerIndex: 1,
+  explanation: "Tall walls = defense."
+},
+{
+  type: "choice",
+  question: "What is the main purpose of this sentence? 'The new app helps students organize their homework efficiently.'",
+  options: ["To criticize the app", "To describe the app’s benefits", "To tell a story", "To entertain"],
+  answerIndex: 1,
+  explanation: "Purpose: describe benefits."
+},
+
+{
+  type: "choice",
+  question: "Choose the best concluding sentence for a paragraph about healthy eating.",
+  options: [
+    "That is why eating healthy food helps us stay strong.",
+    "I don’t like vegetables.",
+    "Some people eat too much fast food.",
+    "The weather is nice today."
+  ],
+  answerIndex: 0,
+  explanation: "Strong conclusion restates the main idea."
+},
+{
+  type: "choice",
+  question: "Which sentence is written in formal style?",
+  options: [
+    "This thing is so annoying!",
+    "The device is currently not functioning properly.",
+    "Why is this thing broken?!",
+    "Ugh, it won’t work."
+  ],
+  answerIndex: 1,
+  explanation: "Formal writing avoids emotional language."
+},
+{
+  type: "choice",
+  question: "Choose the best transition word for sequence: '_______, mix the solution gently.'",
+  options: ["Finally", "Suddenly", "However", "Always"],
+  answerIndex: 0,
+  explanation: "'Finally' fits last step in procedure."
+},
+{
+  type: "choice",
+  question: "Which sentence has correct punctuation?",
+  options: [
+    "My teacher said 'finish your work'.",
+    "My teacher said, 'Finish your work.'",
+    "My teacher said 'Finish your work'.",
+    "My teacher said finish your work."
+  ],
+  answerIndex: 1,
+  explanation: "Quotation marks and comma correctly used."
+},
+{
+  type: "choice",
+  question: "Which is the best topic sentence?",
+  options: [
+    "Birds are animals.",
+    "Many birds migrate thousands of kilometers each year.",
+    "Birds have wings.",
+    "Some birds are blue."
+  ],
+  answerIndex: 1,
+  explanation: "Best topic sentence: specific and introduces idea."
+},
+{
+  type: "choice",
+  question: "Which sentence is clear and concise?",
+  options: [
+    "The book, which I bought last week at the store, was interesting.",
+    "The book I bought last week was interesting.",
+    "Last week, at the big store, I bought a very interesting book.",
+    "The interesting book was the one I bought last week."
+  ],
+  answerIndex: 1,
+  explanation: "Concise writing keeps essential info only."
+},
+{
+  type: "choice",
+  question: "Choose the correct sentence for a report.",
+  options: [
+    "The experiment was totally awesome!",
+    "We observed that the temperature increased by 5°C.",
+    "Eww, the mixture looked weird.",
+    "I think this experiment is boring."
+  ],
+  answerIndex: 1,
+  explanation: "Reports use objective scientific description."
+},
+{
+  type: "choice",
+  question: "Choose the correct spelling.",
+  options: ["Enviroment", "Environment", "Environtment", "Enviromentt"],
+  answerIndex: 1,
+  explanation: "'Environment' is correct spelling."
+},
+{
+  type: "choice",
+  question: "Which sentence shows cause and effect?",
+  options: [
+    "It rained, so the match was canceled.",
+    "The match was yesterday.",
+    "The match was long.",
+    "The match was exciting."
+  ],
+  answerIndex: 0,
+  explanation: "Cause: rain → Effect: canceled."
+},
+{
+  type: "choice",
+  question: "Which sentence uses correct paragraph unity?",
+  options: [
+    "My dog is friendly. It likes playing. I also enjoy painting landscapes.",
+    "My dog is friendly. It likes playing in the yard. It always greets me happily.",
+    "Dogs are pets. Cats are pets. Birds fly.",
+    "I like fruits. My shoes are blue."
+  ],
+  answerIndex: 1,
+  explanation: "All sentences relate to one main idea: the dog."
+},
+
+{
+  type: "choice",
+  question: "You hear your teacher say, 'Don't forget, the test will start at 9 a.m.' What time does the test start?",
   options: [
     "8 a.m.",
     "9 a.m.",
@@ -2298,10 +3424,125 @@
   answerIndex: 3,
   explanation: "Good speaking skills include showing empathy and giving a polite response."
 },
+{
+  type: "choice",
+  question: "Speaking: Choose the most polite request.",
+  options: [
+    "Give me your notes.",
+    "Can I have your notes, please?",
+    "I want your notes.",
+    "You must give me your notes."
+  ],
+  answerIndex: 1,
+  explanation: "Polite request uses 'Can I... please?'"
+},
+{
+  type: "choice",
+  question: "You hear: 'Please submit your assignment by Friday at noon.' When is the deadline?",
+  options: ["Friday morning", "Friday at 12:00", "Thursday evening", "Saturday noon"],
+  answerIndex: 1,
+  explanation: "'Noon' = 12:00 p.m."
+},
+{
+  type: "choice",
+  question: "Speaking: Your friend says, 'I'm nervous about the exam.' What is the BEST response?",
+  options: [
+    "Don't be silly.",
+    "You should relax and study a little each day.",
+    "That's your problem.",
+    "Why are you so nervous?"
+  ],
+  answerIndex: 1,
+  explanation: "Good speaking skills include supportive advice."
+},
+{
+  type: "choice",
+  question: "You hear: 'Turn right after the bank, then walk two blocks to reach the museum.' What should you do?",
+  options: [
+    "Turn left at the bank.",
+    "Turn right and walk two blocks.",
+    "Walk straight without turning.",
+    "Go back home."
+  ],
+  answerIndex: 1,
+  explanation: "Clear directional instruction."
+},
+{
+  type: "choice",
+  question: "Choose the sentence that gives an opinion politely.",
+  options: [
+    "Your idea is wrong.",
+    "I completely disagree with your idea.",
+    "I see your point, but I have a different opinion.",
+    "That idea is terrible."
+  ],
+  answerIndex: 2,
+  explanation: "Polite disagreement uses softening phrases."
+},
+{
+  type: "choice",
+  question: "You hear: 'All students attending the workshop must register at the front desk.' What must students do?",
+  options: [
+    "Go home early",
+    "Register at the front desk",
+    "Skip the workshop",
+    "Wait in the canteen"
+  ],
+  answerIndex: 1,
+  explanation: "Clear instruction: register."
+},
+{
+  type: "choice",
+  question: "Choose the BEST expression to ask for clarification.",
+  options: [
+    "What?!",
+    "Can you explain that again, please?",
+    "Why are you talking like that?",
+    "I don’t understand anything."
+  ],
+  answerIndex: 2,
+  explanation: "Polite and clear communication."
+},
+{
+  type: "choice",
+  question: "You hear: 'Due to maintenance, the train will be delayed by 20 minutes.' What does this mean?",
+  options: [
+    "The train will arrive later than scheduled.",
+    "The train is canceled.",
+    "The train will arrive early.",
+    "The train will not stop."
+  ],
+  answerIndex: 0,
+  explanation: "'Delayed' means late."
+},
+{
+  type: "choice",
+  question: "Choose the sentence that gives advice.",
+  options: [
+    "You must finish it now!",
+    "You should bring a jacket. It's cold outside.",
+    "You are wrong.",
+    "Stop talking."
+  ],
+  answerIndex: 1,
+  explanation: "'Should' is used for giving advice."
+},
+{
+  type: "choice",
+  question: "You hear: 'Before entering the lab, make sure you are wearing safety goggles.' What must you do?",
+  options: [
+    "Enter without equipment",
+    "Wear safety goggles",
+    "Remove your goggles",
+    "Run into the lab"
+  ],
+  answerIndex: 1,
+  explanation: "Instruction tells to wear safety goggles."
+},
 
 {
   type: "choice",
-  question: "Reading: What is the main idea of this text? 'Tom loves science. He spends his free time building small robots and reading books about space. He wants to be an engineer when he grows up.'",
+  question: "What is the main idea of this text? 'Tom loves science. He spends his free time building small robots and reading books about space. He wants to be an engineer when he grows up.'",
   options: ["Tom likes animals.", "Tom is interested in science and robotics.", "Tom wants to be a teacher.", "Tom doesn’t enjoy learning."],
   answerIndex: 1,
   explanation: "The text focuses on Tom’s interest in science, robots, and his dream job."
@@ -2450,8 +3691,8 @@
 
       quizTitle.textContent =
         currentIndex === 0
-          ? "Fokus sebentar, lalu kita rayakan skornya! 🎉"
-          : "Mantap, lanjut lagi! 🚀";
+          ? "Kerjakan soal berikut dengan teliti ya, Ubaid! 💪"
+          : "Lanjut! Fokus dulu, nanti main game lagi. 🎮";
     }
 
     function renderQuestion() {
@@ -2512,8 +3753,8 @@
       const isTriple = q.type === "input3";
 
       // label (bisa custom via q.labels)
-      const labels = q.labels || (isTriple ? ["X", "Y", "Z"] : ["Jawaban", "Y", "Z"]);
-      label1.textContent = labels[0] || (isTriple ? "X" : "Jawaban");
+      const labels = q.labels || (isTriple ? ["X", "Y", "Z"] : ["Answer", "Y", "Z"]);
+      label1.textContent = labels[0] || (isTriple ? "X" : "Answer");
       label2.textContent = labels[1] || "Y";
       label3.textContent = labels[2] || "Z";
 
@@ -2575,7 +3816,7 @@
       nextBtn.textContent =
         currentIndex === currentQuestions.length - 1
           ? "Lihat Hasil 🏁"
-          : "Berikutnya ➜";
+          : "Next ➜";
     }
 
     function handleInputSubmit() {
@@ -2646,7 +3887,7 @@
       nextBtn.textContent =
         currentIndex === currentQuestions.length - 1
           ? "Lihat Hasil 🏁"
-          : "Berikutnya ➜";
+          : "Next ➜";
     }
 
     function handleInput3Submit(q) {
@@ -2693,7 +3934,7 @@
       nextBtn.textContent =
         currentIndex === currentQuestions.length - 1
           ? "Lihat Hasil 🏁"
-          : "Berikutnya ➜";
+          : "Next ➜";
     }
 
     function goToNextQuestion() {
@@ -2727,46 +3968,64 @@
       resultCard.style.display = "block";
 
       const totalQuestions = currentQuestions.length;
-      const correctCount = score / 10;
-      const wrongCount = totalQuestions - correctCount - skippedCount;
-      const percent =
-        totalQuestions > 0
-          ? Math.round((correctCount / totalQuestions) * 100)
-          : 0;
+const correctCount = score / 10; // tetap dipakai untuk hitung benar
+const wrongCount = totalQuestions - correctCount - skippedCount;
 
-      resultScore.textContent = score;
-      resultMaxScore.textContent = totalQuestions * 10;
+// Nilai akhir = (benar / total) × 100
+const percent = Math.round((correctCount / totalQuestions) * 100);
+
+// score akhir bukan XP lagi, tapi nilai 0–100
+const finalScore = percent;
+
+
+      resultScore.textContent = finalScore;   // nilai akhir 0–100
+      resultMaxScore.textContent = "100";    // total selalu 100
       resultCorrect.textContent = correctCount;
       resultWrong.textContent = wrongCount;
       resultSkipped.textContent = skippedCount;
-      resultPercent.textContent = percent + "%";
+      resultPercent.textContent = finalScore + "%";
 
-      if (percent === 100) {
-        emojiResult.textContent = "🌟";
-        resultTitle.textContent = "Perfect! Math & Science Hero! 🔥";
-        resultMessage.textContent =
-          "Semua soal benar! Ulangi atau naikkan jumlah soalnya untuk tantangan baru.";
-      } else if (percent >= 80) {
-        emojiResult.textContent = "🏆";
-        resultTitle.textContent = "Keren banget! 💪";
-        resultMessage.textContent =
-          "Nilaimu sudah tinggi. Coba cek lagi soal-soal yang masih salah, ya.";
-      } else if (percent >= 50) {
-        emojiResult.textContent = "🚀";
-        resultTitle.textContent = "Lumayan, kita push lagi!";
-        resultMessage.textContent =
-          "Belajar itu pelan-pelan tapi rutin. Ulangi sesi ini supaya makin kuat.";
+      let title, msg, emoji;
+      if (finalScore === 100) {
+        emoji = "🌟";
+        title = "Perfect! Juara banget, Ubaid! 🔥";
+        msg = "Semua soal benar! Ulangi atau naikkan jumlah soalnya untuk tantangan baru.";
+      } else if (finalScore >= 80) {
+        emoji = "🏆";
+        title = "Keren banget! 💪";
+        msg = "Nilaimu sudah tinggi. Coba cek lagi soal-soal yang masih salah, ya.";
+      } else if (finalScore >= 50) {
+        emoji = "🚀";
+        title = "Lumayan, kita push lagi!";
+        msg = "Belajar itu pelan-pelan tapi rutin. Ulangi sesi ini supaya makin kuat.";
       } else {
-        emojiResult.textContent = "🌱";
-        resultTitle.textContent = "Awal yang bagus untuk mulai! 🙂";
-        resultMessage.textContent =
-          "Tidak apa-apa kalau masih banyak salah. Kita bisa mulai dari materi mudah dulu.";
+        emoji = "🌱";
+        title = "Ayo kita mulai dari dasar lagi 😉";
+        msg = "Tidak apa-apa kalau masih banyak salah. Kita bisa mulai dari materi mudah dulu.";
       }
+
+      emojiResult.textContent = emoji;
+      resultTitle.textContent = title;
+      resultMessage.textContent = msg;
+
+      // Update modal
+      modalEmoji.textContent = emoji;
+      modalScore.innerHTML = finalScore + "<span>%</span>";
+      modalMessageShort.textContent = title;
+      modalCorrect.textContent = correctCount;
+      modalWrong.textContent = wrongCount;
+      modalSkipped.textContent = skippedCount;
+
+      // Tampilkan modal
+      quizCard.style.display = "none";
+      resultCard.style.display = "none";
+      resultModal.style.display = "flex";
     }
 
     function resetToStart() {
       quizCard.style.display = "none";
       resultCard.style.display = "none";
+      resultModal.style.display = "none";
       emptyState.style.display = "flex";
     }
 
@@ -2790,6 +4049,7 @@
       nextBtn.disabled = true;
 
       resultCard.style.display = "none";
+      resultModal.style.display = "none";
       quizCard.style.display = "block";
 
       updateProgress();
@@ -2812,6 +4072,9 @@
         }
       });
     });
+
+    modalRetryBtn.addEventListener("click", retrySameQuiz);
+    modalCloseBtn.addEventListener("click", resetToStart);
   </script>
 </body>
 </html>
