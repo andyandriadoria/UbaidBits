@@ -2148,63 +2148,519 @@
       ],
 
       english: [
-        {
-          type: "choice",
-          question: "Which one is a noun?",
-          options: ["Run", "Happy", "Teacher", "Quickly"],
-          answerIndex: 2,
-          explanation: "Teacher adalah kata benda (noun)."
-        },
-        {
-          type: "choice",
-          question: "Choose the correct sentence:",
-          options: [
-            "He don't like apples.",
-            "He doesn't like apples.",
-            "He doesn't likes apples.",
-            "He not like apples."
-          ],
-          answerIndex: 1,
-          explanation: "Kalimat yang benar: He doesn't like apples."
-        },
-        {
-          type: "input",
-          question: "Fill in the blank: She ____ (go) to school every day.",
-          correctAnswers: ["goes"],
-          explanation: "Untuk she/he/it, kata kerja biasanya ditambah -es: goes."
-        },
-        {
-          type: "choice",
-          question: "Complete the sentence: Arabang and …. were amazed by the baby elephants.",
-          options: ["I", "me", "My", "Mine"],
-          answerIndex: 0,
-          explanation: "Karena menjadi bagian dari subjek (Arabang and I), maka yang digunakan adalah I."
-        },
-        {
-          type: "choice",
-          question: "It was an amazing experience for …. and the rest of the group.",
-          options: ["I", "me", "My", "Mine"],
-          answerIndex: 1,
-          explanation: "Setelah preposisi (for), kita menggunakan objek 'me'."
-        },
-        {
-          type: "choice",
-          question: "The elephants were unaware that …. was watching them.",
-          options: ["I", "me", "My", "Mine"],
-          answerIndex: 0,
-          explanation: "Di sini yang berfungsi sebagai subjek (was watching) adalah 'I'."
-        },
-        {
-          type: "input3",
-          question: "Complete with I or me: X, Y, and Z.",
-          labels: ["X", "Y", "Z"],
-          correctAnswers: [
-            ["I", "i"],
-            ["Me", "me"],
-            ["I", "i"]
-          ],
-          explanation: "Gunakan I ketika sebagai subjek, dan me sebagai objek."
-        }
+  {
+    type: "choice",
+    question: "Maya always ____ her homework before dinner.",
+    options: ["does", "did", "doing", "do"],
+    answerIndex: 0,
+    explanation: "Subjek 'Maya' adalah orang ketiga tunggal, jadi kata kerjanya memakai bentuk singular. Untuk kata kerja 'do', bentuknya menjadi 'does'. Kata 'always' juga menunjukkan kebiasaan, jadi Simple Present adalah pilihan yang tepat."
+  },
+  {
+    type: "choice",
+    question: "Which sentence is correct?",
+    options: [
+      "He go to the gym every day.",
+      "He going to the gym every day.",
+      "He goes to the gym every day.",
+      "He gone to the gym every day."
+    ],
+    answerIndex: 2,
+    explanation: "Subjek 'He' termasuk orang ketiga tunggal, jadi verb harus berubah menjadi 'goes'. Pilihan lain salah karena memakai bentuk dasar, bentuk -ing, atau past participle yang tidak cocok untuk Simple Present."
+  },
+  {
+    type: "choice",
+    question: "Look at the sentence: 'She doesn't eats breakfast.' What is wrong?",
+    options: ["She", "doesn't", "breakfast", "eats"],
+    answerIndex: 3,
+    explanation: "Yang salah adalah 'eats'. Setelah 'doesn't', kata kerja harus kembali ke bentuk dasar. Jadi kalimat yang benar adalah 'She doesn't eat breakfast.'"
+  },
+  {
+    type: "choice",
+    question: "Which sentence expresses a general truth?",
+    options: [
+      "They are playing football.",
+      "Water boils at 100°C.",
+      "She is sleeping now.",
+      "I am reading a book."
+    ],
+    answerIndex: 1,
+    explanation: "Kalimat 'Water boils at 100°C' adalah fakta umum atau general truth. Fakta umum dalam bahasa Inggris biasanya memakai Simple Present."
+  },
+  {
+    type: "choice",
+    question: "Choose the correct sentence.",
+    options: [
+      "They don't like coffee.",
+      "They doesn't like coffee.",
+      "They not like coffee.",
+      "They don't likes coffee."
+    ],
+    answerIndex: 0,
+    explanation: "Subjek 'They' memakai 'do not/don't', bukan 'doesn't'. Setelah 'don't', kata kerja juga harus bentuk dasar, jadi 'like' adalah bentuk yang benar."
+  },
+  {
+    type: "choice",
+    question: "Every morning, my father ____ coffee and reads the news.",
+    options: ["drank", "drink", "drinking", "drinks"],
+    answerIndex: 3,
+    explanation: "'My father' adalah subjek tunggal, jadi kata kerja harus memakai bentuk singular, yaitu 'drinks'. Kata 'Every morning' menunjukkan rutinitas, jadi Simple Present digunakan."
+  },
+  {
+    type: "choice",
+    question: "The students ____ English every Monday.",
+    options: ["studies", "studied", "study", "studying"],
+    answerIndex: 2,
+    explanation: "'The students' adalah subjek jamak, jadi kita memakai kata kerja bentuk dasar, yaitu 'study'. Tidak perlu tambahan -s atau -es."
+  },
+  {
+    type: "choice",
+    question: "Which sentence is NOT correct?",
+    options: [
+      "We eat lunch together.",
+      "He plays football.",
+      "She likes ice cream.",
+      "It run very fast."
+    ],
+    answerIndex: 3,
+    explanation: "Yang salah adalah 'It run very fast.' Subjek 'It' adalah tunggal, jadi kata kerja harus menjadi 'runs'. Kalimat yang benar: 'It runs very fast.'"
+  },
+  {
+    type: "choice",
+    question: "Which sentence shows a habit?",
+    options: [
+      "I eat lunch at 12 every day.",
+      "I ate lunch yesterday.",
+      "I am eating now.",
+      "I will eat lunch later."
+    ],
+    answerIndex: 0,
+    explanation: "Kalimat yang menunjukkan kebiasaan adalah yang memiliki penanda rutinitas seperti 'every day'. Karena itu, 'I eat lunch at 12 every day' adalah jawaban yang benar."
+  },
+  {
+    type: "choice",
+    question: "Which sentence expresses an opinion?",
+    options: [
+      "Birds fly in the sky.",
+      "Water freezes at 0°C.",
+      "I think this game is fun.",
+      "The earth moves around the sun."
+    ],
+    answerIndex: 2,
+    explanation: "'I think this game is fun' menunjukkan pendapat pribadi, jadi itu adalah opinion. Pilihan lain adalah fakta umum."
+  },
+  {
+    type: "choice",
+    question: "Choose the correct negative form.",
+    options: [
+      "She not understand the lesson.",
+      "She doesn't understands the lesson.",
+      "She don't understand the lesson.",
+      "She doesn't understand the lesson."
+    ],
+    answerIndex: 3,
+    explanation: "Untuk subjek 'She', kita memakai 'doesn't'. Setelah 'doesn't', kata kerja harus bentuk dasar, jadi 'understand' adalah bentuk yang benar."
+  },
+  {
+    type: "choice",
+    question: "Which word is incorrect in this sentence: 'He don't play basketball after school.'",
+    options: ["don't", "play", "after", "school"],
+    answerIndex: 0,
+    explanation: "Yang salah adalah 'don't'. Karena subjeknya 'He', bentuk negatif yang benar adalah 'doesn't'. Jadi kalimat yang benar: 'He doesn't play basketball after school.'"
+  },
+  {
+    type: "choice",
+    question: "Which sentence is correct?",
+    options: [
+      "My sister haves a new phone.",
+      "My sister has a new phone.",
+      "My sister have a new phone.",
+      "My sister having a new phone."
+    ],
+    answerIndex: 1,
+    explanation: "'My sister' adalah subjek tunggal. Kata kerja 'have' berubah menjadi 'has' untuk he, she, it, atau singular noun."
+  },
+  {
+    type: "choice",
+    question: "Which sentence is a fact?",
+    options: [
+      "She is dancing.",
+      "The sun rises in the east.",
+      "I am watching TV.",
+      "I love chocolate."
+    ],
+    answerIndex: 1,
+    explanation: "'The sun rises in the east' adalah fakta umum yang selalu benar. Itu sebabnya kalimat ini memakai Simple Present."
+  },
+  {
+    type: "choice",
+    question: "Tom and Jerry ____ each other a lot.",
+    options: ["fight", "fights", "fighting", "fought"],
+    answerIndex: 0,
+    explanation: "'Tom and Jerry' berarti dua orang, jadi subjeknya jamak. Subjek jamak memakai kata kerja bentuk dasar, jadi 'fight' adalah jawaban yang benar."
+  },
+  {
+    type: "choice",
+    question: "My teacher ____ very clearly.",
+    options: ["explaining", "explain", "explains", "explained"],
+    answerIndex: 2,
+    explanation: "'My teacher' adalah subjek tunggal, jadi kata kerjanya harus 'explains'. Bentuk ini cocok untuk kebiasaan atau keadaan yang biasa terjadi."
+  },
+  {
+    type: "choice",
+    question: "Which sentence is correct?",
+    options: [
+      "He goes to school every day.",
+      "He go to school every day.",
+      "He gone to school every day.",
+      "He going to school every day."
+    ],
+    answerIndex: 0,
+    explanation: "Subjek 'He' harus memakai kata kerja singular, jadi 'go' berubah menjadi 'goes'. Kalimat ini juga menunjukkan rutinitas karena ada 'every day'."
+  },
+  {
+    type: "choice",
+    question: "The earth ____ around the sun.",
+    options: ["move", "moving", "moves", "moved"],
+    answerIndex: 2,
+    explanation: "Ini adalah fakta umum. Subjek 'The earth' adalah tunggal, jadi kata kerja yang benar adalah 'moves'."
+  },
+  {
+    type: "choice",
+    question: "Which sentence shows a routine?",
+    options: [
+      "I slept last night.",
+      "I am sleeping now.",
+      "I will sleep later.",
+      "I sleep at 10 PM every day."
+    ],
+    answerIndex: 3,
+    explanation: "Kalimat yang menunjukkan rutinitas biasanya memiliki penanda waktu seperti 'every day'. Karena itu, 'I sleep at 10 PM every day' adalah jawaban yang benar."
+  },
+  {
+    type: "choice",
+    question: "They ____ to school together.",
+    options: ["walk", "walked", "walks", "walking"],
+    answerIndex: 0,
+    explanation: "'They' adalah subjek jamak, jadi memakai kata kerja bentuk dasar, yaitu 'walk'. Tidak perlu tambahan -s."
+  },
+  {
+    type: "choice",
+    question: "Which sentence is NOT correct?",
+    options: [
+      "We study English.",
+      "They eats lunch.",
+      "He drinks milk.",
+      "She eats breakfast."
+    ],
+    answerIndex: 1,
+    explanation: "Yang salah adalah 'They eats lunch.' Karena 'They' adalah jamak, kata kerja yang benar harus 'eat', bukan 'eats'."
+  },
+  {
+    type: "choice",
+    question: "He ____ his homework every day.",
+    options: ["finishing", "finishes", "finish", "finished"],
+    answerIndex: 1,
+    explanation: "'He' adalah subjek tunggal, jadi kata kerja harus memakai bentuk singular, yaitu 'finishes'."
+  },
+  {
+    type: "choice",
+    question: "Which sentence expresses a fact?",
+    options: [
+      "I am eating pizza.",
+      "She is cooking.",
+      "Water evaporates.",
+      "I like pizza."
+    ],
+    answerIndex: 2,
+    explanation: "'Water evaporates' adalah fakta ilmiah. Fakta umum seperti ini memakai Simple Present."
+  },
+  {
+    type: "choice",
+    question: "She doesn't ____ music.",
+    options: ["liked", "liking", "like", "likes"],
+    answerIndex: 2,
+    explanation: "Setelah 'doesn't', kita harus memakai kata kerja bentuk dasar. Jadi yang benar adalah 'like', bukan 'likes'."
+  },
+  {
+    type: "choice",
+    question: "Which sentence is correct?",
+    options: [
+      "It haves four legs.",
+      "It having four legs.",
+      "It has four legs.",
+      "It have four legs."
+    ],
+    answerIndex: 2,
+    explanation: "'It' memakai bentuk 'has', bukan 'have'. Ini adalah bentuk khusus untuk subjek tunggal."
+  },
+  {
+    type: "choice",
+    question: "Which word is incorrect in this sentence: 'He doesn't plays football.'",
+    options: ["He", "doesn't", "plays", "football"],
+    answerIndex: 2,
+    explanation: "Yang salah adalah 'plays'. Setelah 'doesn't', kata kerja harus bentuk dasar, jadi harus 'play'."
+  },
+  {
+    type: "choice",
+    question: "My mother ____ delicious food.",
+    options: ["cooks", "cook", "cooking", "cooked"],
+    answerIndex: 0,
+    explanation: "'My mother' adalah subjek tunggal, jadi kata kerja harus memakai bentuk singular, yaitu 'cooks'."
+  },
+  {
+    type: "choice",
+    question: "Which sentence expresses an opinion?",
+    options: [
+      "The sun rises.",
+      "Ice melts.",
+      "Water freezes.",
+      "I believe this is true."
+    ],
+    answerIndex: 3,
+    explanation: "'I believe this is true' menunjukkan pendapat atau keyakinan pribadi. Itu termasuk opinion, bukan fakta umum."
+  },
+  {
+    type: "choice",
+    question: "We ____ English every day.",
+    options: ["studying", "studies", "study", "studied"],
+    answerIndex: 2,
+    explanation: "'We' adalah subjek jamak, jadi memakai kata kerja bentuk dasar, yaitu 'study'."
+  },
+  {
+    type: "choice",
+    question: "Which sentence is correct?",
+    options: [
+      "He doesn't understand.",
+      "He doesn't understands.",
+      "He don't understand.",
+      "He not understand."
+    ],
+    answerIndex: 0,
+    explanation: "Untuk 'He', bentuk negatif yang benar adalah 'doesn't + verb dasar'. Karena itu, 'He doesn't understand' adalah jawaban yang benar."
+  },
+  {
+    type: "choice",
+    question: "Which sentence is NOT correct?",
+    options: [
+      "She likes tea.",
+      "He eat rice.",
+      "They play games.",
+      "We read books."
+    ],
+    answerIndex: 1,
+    explanation: "Yang salah adalah 'He eat rice.' Karena subjeknya 'He', kata kerja harus menjadi 'eats'."
+  },
+  {
+    type: "choice",
+    question: "The baby ____ loudly.",
+    options: ["cry", "crying", "cried", "cries"],
+    answerIndex: 3,
+    explanation: "'The baby' adalah subjek tunggal. Kata kerja 'cry' berubah menjadi 'cries' pada Simple Present."
+  },
+  {
+    type: "choice",
+    question: "Which sentence expresses a feeling?",
+    options: [
+      "I feel tired today.",
+      "Water boils.",
+      "Plants grow.",
+      "The earth moves."
+    ],
+    answerIndex: 0,
+    explanation: "'I feel tired today' menunjukkan perasaan. Kata 'feel' sering dipakai untuk mengungkapkan feelings."
+  },
+  {
+    type: "choice",
+    question: "He ____ to school by bus.",
+    options: ["went", "goes", "going", "go"],
+    answerIndex: 1,
+    explanation: "'He' adalah subjek tunggal, jadi kata kerja harus memakai bentuk singular, yaitu 'goes'."
+  },
+  {
+    type: "choice",
+    question: "Which word is incorrect in this sentence: 'She go to school every day.'",
+    options: ["to", "school", "go", "She"],
+    answerIndex: 2,
+    explanation: "Yang salah adalah 'go'. Karena subjeknya 'She', kata kerja yang benar harus 'goes'."
+  },
+  {
+    type: "choice",
+    question: "Dogs ____ loudly.",
+    options: ["barked", "barks", "bark", "barking"],
+    answerIndex: 2,
+    explanation: "'Dogs' adalah subjek jamak, jadi memakai kata kerja bentuk dasar, yaitu 'bark'."
+  },
+  {
+    type: "choice",
+    question: "Which sentence is correct?",
+    options: [
+      "She doesn't eat vegetables.",
+      "She doesn't eats vegetables.",
+      "She don't eat vegetables.",
+      "She not eat vegetables."
+    ],
+    answerIndex: 0,
+    explanation: "Untuk subjek 'She', bentuk negatif yang benar adalah 'doesn't + verb dasar'. Jadi 'She doesn't eat vegetables' adalah jawaban yang benar."
+  },
+  {
+    type: "choice",
+    question: "Which sentence expresses a general truth?",
+    options: [
+      "I am writing.",
+      "She is cooking.",
+      "Water flows downhill.",
+      "They are playing."
+    ],
+    answerIndex: 2,
+    explanation: "'Water flows downhill' adalah general truth. Fakta umum seperti ini memakai Simple Present."
+  },
+  {
+    type: "choice",
+    question: "My friends ____ football every weekend.",
+    options: ["plays", "play", "played", "playing"],
+    answerIndex: 1,
+    explanation: "'My friends' adalah subjek jamak, jadi memakai kata kerja bentuk dasar, yaitu 'play'."
+  },
+  {
+    type: "choice",
+    question: "Which sentence is NOT correct?",
+    options: [
+      "He runs fast.",
+      "We eat rice.",
+      "They walks to school.",
+      "She reads books."
+    ],
+    answerIndex: 2,
+    explanation: "Yang salah adalah 'They walks to school.' Karena 'They' jamak, kata kerja harus 'walk', bukan 'walks'."
+  },
+  {
+    type: "choice",
+    question: "The sun ____ in the east.",
+    options: ["rose", "rise", "rises", "rising"],
+    answerIndex: 2,
+    explanation: "Ini adalah fakta umum. Subjek 'The sun' tunggal, jadi kata kerja yang benar adalah 'rises'."
+  },
+  {
+    type: "choice",
+    question: "Which sentence expresses a preference?",
+    options: [
+      "I ate pizza.",
+      "I prefer pizza.",
+      "I am eating pizza.",
+      "I will eat pizza."
+    ],
+    answerIndex: 1,
+    explanation: "'I prefer pizza' menunjukkan pilihan atau kesukaan, jadi itu termasuk preference."
+  },
+  {
+    type: "choice",
+    question: "He ____ English very well.",
+    options: ["spoke", "speaks", "speaking", "speak"],
+    answerIndex: 1,
+    explanation: "'He' adalah subjek tunggal, jadi kata kerja harus menjadi 'speaks'."
+  },
+  {
+    type: "choice",
+    question: "Which word is incorrect in this sentence: 'They eats lunch at noon.'",
+    options: ["They", "eats", "lunch", "at"],
+    answerIndex: 1,
+    explanation: "Yang salah adalah 'eats'. Karena 'They' adalah jamak, kata kerja yang benar adalah 'eat'."
+  },
+  {
+    type: "choice",
+    question: "She ____ her teeth twice a day.",
+    options: ["brushes", "brushing", "brush", "brushed"],
+    answerIndex: 0,
+    explanation: "'She' adalah subjek tunggal, jadi kata kerja harus memakai bentuk singular, yaitu 'brushes'."
+  },
+  {
+    type: "choice",
+    question: "Which sentence expresses an opinion?",
+    options: [
+      "Ice melts.",
+      "Water boils.",
+      "The earth spins.",
+      "I think he is right."
+    ],
+    answerIndex: 3,
+    explanation: "'I think he is right' menunjukkan pendapat pribadi, jadi itu adalah opinion."
+  },
+  {
+    type: "choice",
+    question: "We ____ dinner together.",
+    options: ["eat", "ate", "eating", "eats"],
+    answerIndex: 0,
+    explanation: "'We' adalah subjek jamak, jadi kita memakai kata kerja bentuk dasar, yaitu 'eat'."
+  },
+  {
+    type: "choice",
+    question: "Which sentence is correct?",
+    options: [
+      "It doesn't works.",
+      "It don't work.",
+      "It not work.",
+      "It doesn't work."
+    ],
+    answerIndex: 3,
+    explanation: "Untuk subjek 'It', bentuk negatif yang benar adalah 'doesn't + verb dasar'. Jadi 'It doesn't work' adalah jawaban yang benar."
+  },
+  {
+    type: "choice",
+    question: "The cat ____ on the sofa.",
+    options: ["sleeping", "sleep", "slept", "sleeps"],
+    answerIndex: 3,
+    explanation: "'The cat' adalah subjek tunggal, jadi kata kerja harus menjadi 'sleeps'."
+  },
+  {
+    type: "choice",
+    question: "Which sentence expresses a fact?",
+    options: [
+      "Water freezes.",
+      "I like ice cream.",
+      "I am eating.",
+      "She is dancing."
+    ],
+    answerIndex: 0,
+    explanation: "'Water freezes' adalah fakta umum. Fakta umum biasanya memakai Simple Present."
+  },
+  {
+    type: "choice",
+    question: "He ____ TV every night.",
+    options: ["watching", "watch", "watched", "watches"],
+    answerIndex: 3,
+    explanation: "'He' adalah subjek tunggal, jadi kata kerja yang benar adalah 'watches'."
+  },
+  {
+    type: "choice",
+    question: "Which sentence is NOT correct?",
+    options: [
+      "She sings well.",
+      "They eats lunch.",
+      "He runs fast.",
+      "We read books."
+    ],
+    answerIndex: 1,
+    explanation: "Yang salah adalah 'They eats lunch.' Karena 'They' jamak, kata kerja harus 'eat', bukan 'eats'."
+  },
+  {
+    type: "choice",
+    question: "Birds ____ in the sky.",
+    options: ["fly", "flying", "flies", "flew"],
+    answerIndex: 0,
+    explanation: "'Birds' adalah subjek jamak, jadi memakai kata kerja bentuk dasar, yaitu 'fly'."
+  },
+  {
+    type: "choice",
+    question: "Which sentence expresses a feeling?",
+    options: [
+      "Water boils.",
+      "Plants grow.",
+      "I feel happy.",
+      "The sun shines."
+    ],
+    answerIndex: 2,
+    explanation: "'I feel happy' menunjukkan perasaan. Kata 'feel' membantu kita mengenali kalimat yang berisi feeling."
+  }
       ],
 
       global: [
